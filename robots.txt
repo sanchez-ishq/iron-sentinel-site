@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+# Keep paid-download paths out of search indexes
+Disallow: /d/
+
+Sitemap: https://ironsentinelhq.com/sitemap.xml
