@@ -1,0 +1,14 @@
+# Secrets — NEVER commit these
+.env
+*.env
+secrets/
+*.key
+*.pem
+*-secret*
+stripe_*.txt
+
+# OS / editor cruft
+Thumbs.db
+.DS_Store
+*.swp
+.obsidian/
