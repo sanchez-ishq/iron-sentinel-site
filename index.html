@@ -360,6 +360,43 @@ footer{background:var(--navy);border-top:1px solid rgba(255,255,255,0.1);padding
 </div>
 </section>
 
+<!-- NEWSLETTER — The Sentinel Brief -->
+<section class="newsletter-section" aria-labelledby="newsletter-heading"
+  style="background:linear-gradient(135deg,#0f1e38,var(--navy));border-top:1px solid rgba(197,154,46,0.2);padding:64px 0">
+<div class="container">
+  <div style="max-width:600px;margin:0 auto;text-align:center">
+    <div class="resource-badge" style="display:inline-block;background:rgba(197,154,46,0.15);color:var(--gold);border:1px solid rgba(197,154,46,0.3);font-size:11px;font-weight:700;padding:3px 12px;border-radius:10px;text-transform:uppercase;letter-spacing:1px;margin-bottom:14px">Free Newsletter</div>
+    <h2 id="newsletter-heading" style="font-family:'DM Serif Display',serif;color:var(--white);font-size:clamp(26px,3.5vw,34px);margin-bottom:12px">The Sentinel Brief</h2>
+    <p style="color:rgba(255,255,255,0.78);font-size:16px;margin-bottom:28px">
+      One short email a week: a real compliance move you can make in 15 minutes. HIPAA, SOC&nbsp;2,
+      and NIST — in plain English. Written by a federal-RMF and healthcare compliance consultant. Free.</p>
+
+    <!-- ============================================================
+         MAILERLITE SIGNUP FORM
+         SETUP: In MailerLite → Forms → Embedded form → copy the HTML
+         embed snippet and PASTE IT between the two marker comments below
+         (replace the fallback form). The fallback below is styled to match
+         the site so the page looks complete until the embed is added.
+         ============================================================ -->
+    <!-- MAILERLITE-EMBED-START -->
+    <form aria-label="Subscribe to The Sentinel Brief"
+      onsubmit="event.preventDefault();alert('Newsletter signup goes live once the MailerLite embed is added.');"
+      style="display:flex;gap:10px;flex-wrap:wrap;justify-content:center;max-width:480px;margin:0 auto">
+      <label for="nl-email" class="sr-only">Work email</label>
+      <input id="nl-email" type="email" required placeholder="you@yourcompany.com" autocomplete="email"
+        style="flex:1 1 240px;padding:14px 16px;border:1.5px solid rgba(255,255,255,0.25);border-radius:8px;background:rgba(255,255,255,0.06);color:var(--white);font-family:'DM Sans',sans-serif;font-size:15px">
+      <button type="submit"
+        style="background:var(--gold);color:var(--navy);padding:14px 28px;border:none;border-radius:8px;font-weight:700;font-size:15px;font-family:'DM Sans',sans-serif;cursor:pointer;white-space:nowrap">
+        Get the Brief →</button>
+    </form>
+    <!-- MAILERLITE-EMBED-END -->
+
+    <p style="color:rgba(255,255,255,0.5);font-size:12px;margin-top:14px">
+      One email a week. Unsubscribe anytime. No spam — we respect your inbox.</p>
+  </div>
+</div>
+</section>
+
 </main>
 
 <!-- FOOTER -->
