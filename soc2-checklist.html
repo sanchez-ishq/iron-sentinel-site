@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<link rel="icon" type="image/png" href="/logo.png">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Free SOC 2 Readiness Checklist (15 checks) | Iron Sentinel</title>
+<meta name="description" content="A free 15-point SOC 2 readiness checklist across all five Trust Services Criteria. See exactly where you stand before an auditor or enterprise buyer asks — no email required.">
+<link rel="canonical" href="https://ironsentinelhq.com/soc2-checklist">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Iron Sentinel">
+<meta property="og:title" content="Free SOC 2 Readiness Checklist — 15 checks">
+<meta property="og:description" content="See exactly where you stand on SOC 2 across all five Trust Services Criteria. Free, no catch.">
+<meta property="og:url" content="https://ironsentinelhq.com/soc2-checklist">
+<meta property="og:image" content="https://ironsentinelhq.com/logo.png">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Free SOC 2 Readiness Checklist — 15 checks">
+<meta name="twitter:description" content="See exactly where you stand on SOC 2. Free, no catch.">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=DM+Serif+Display&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--navy:#1B2A4A;--blue:#2E5090;--gold:#C59A2E;--gold-text:#7B5800;--light:#F8F9FA;--white:#FFFFFF;--text:#333;--gray:#555;--green:#1E8449}
+body{font-family:'DM Sans',sans-serif;color:var(--text);line-height:1.6;background:var(--white)}
+.container{max-width:840px;margin:0 auto;padding:0 24px}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+a{color:var(--blue)}
+*:focus-visible{outline:3px solid var(--gold);outline-offset:3px;border-radius:3px}
+.nav{display:flex;justify-content:space-between;align-items:center;padding:20px 0}
+.logo{color:var(--white);font-family:'DM Serif Display',serif;font-size:22px;text-decoration:none;display:flex;align-items:center;gap:8px}
+.nav-link{color:var(--gold);text-decoration:none;font-weight:500;font-size:14px;padding:8px 18px;border:1px solid var(--gold);border-radius:6px}
+.nav-link:hover{background:var(--gold);color:var(--navy)}
+.hero{background:var(--navy);padding:56px 0 80px;position:relative}
+.hero::after{content:'';position:absolute;bottom:-2px;left:0;right:0;height:50px;background:var(--white);clip-path:polygon(0 100%,100% 100%,100% 0)}
+.hero-badge{display:inline-block;background:rgba(197,154,46,0.15);color:var(--gold);padding:6px 16px;border-radius:20px;font-size:13px;font-weight:500;margin-bottom:18px;border:1px solid rgba(197,154,46,0.3)}
+.hero h1{font-family:'DM Serif Display',serif;color:var(--white);font-size:clamp(30px,4.5vw,44px);line-height:1.15;margin-bottom:14px}
+.hero h1 span{color:var(--gold)}
+.hero p{color:rgba(255,255,255,0.85);font-size:17px;max-width:620px}
+.body-wrap{padding:8px 0 40px}
+.intro{background:var(--light);border-left:4px solid var(--gold);border-radius:10px;padding:18px 22px;margin:0 0 34px;font-size:14.5px;color:var(--gray)}
+.group{margin:0 0 30px}
+.group h2{font-family:'DM Serif Display',serif;color:var(--navy);font-size:22px;margin-bottom:6px}
+.group .gsub{color:var(--gray);font-size:13px;margin-bottom:14px}
+.check{display:flex;gap:12px;align-items:flex-start;padding:12px 14px;border:1px solid #E4E7EC;border-radius:10px;margin-bottom:10px;background:var(--white)}
+.check input{margin-top:4px;width:18px;height:18px;flex-shrink:0;accent-color:var(--gold)}
+.check label{font-size:14.5px;color:var(--text)}
+.check label strong{color:var(--navy)}
+.score{background:var(--navy);color:var(--white);border-radius:14px;padding:28px;margin:36px 0}
+.score h2{font-family:'DM Serif Display',serif;color:var(--gold);font-size:22px;margin-bottom:14px}
+.score ul{list-style:none;display:flex;flex-direction:column;gap:8px}
+.score li{font-size:14.5px;color:rgba(255,255,255,0.9);padding-left:20px;position:relative}
+.score li::before{content:'▸';position:absolute;left:0;color:var(--gold)}
+.note{border:1px solid #E4E7EC;border-radius:10px;padding:18px 22px;font-size:14px;color:var(--gray);margin:0 0 34px}
+.cta-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:10px 0 8px}
+.cta{background:var(--light);border-radius:12px;padding:24px;border-top:3px solid var(--gold);text-align:center}
+.cta h3{color:var(--navy);font-size:16px;margin-bottom:6px}
+.cta p{color:var(--gray);font-size:13px;margin-bottom:14px}
+.btn{display:inline-block;background:var(--gold);color:var(--navy);padding:12px 22px;border-radius:8px;font-weight:700;font-size:14px;text-decoration:none}
+.btn.alt{background:var(--navy);color:var(--white)}
+.btn:hover{transform:translateY(-2px)}
+.printbar{text-align:center;margin:6px 0 30px}
+.print-btn{background:none;border:1px solid var(--gold);color:var(--gold-text);padding:10px 20px;border-radius:6px;font-weight:700;font-size:13px;cursor:pointer;font-family:inherit}
+footer{background:var(--navy);padding:36px 0;margin-top:40px}
+.footer-inner{display:flex;flex-direction:column;align-items:center;gap:12px;text-align:center}
+.footer-logo{color:var(--white);font-family:'DM Serif Display',serif;font-size:20px;display:flex;align-items:center;gap:8px}
+.footer-links{display:flex;gap:22px;flex-wrap:wrap;justify-content:center}
+.footer-links a{color:rgba(255,255,255,0.65);font-size:13px;text-decoration:none}
+.footer-links a:hover{color:var(--gold)}
+.disc{color:rgba(255,255,255,0.4);font-size:11px;max-width:700px;line-height:1.7;border-top:1px solid rgba(255,255,255,0.08);padding-top:14px;margin-top:8px}
+@media(max-width:680px){.cta-grid{grid-template-columns:1fr}}
+@media print{.hero,.nav,.printbar,footer{background:#fff!important;color:#000!important}.hero::after{display:none}.nav-link,.print-btn{display:none}.hero h1,.hero p,.hero h1 span{color:#000!important}}
+</style>
+</head>
+<body>
+<a href="#main" class="sr-only">Skip to main content</a>
+<header>
+<section class="hero">
+<div class="container">
+  <nav class="nav" aria-label="Main navigation">
+    <a href="/" class="logo" aria-label="Iron Sentinel — Home"><img src="/logo.png" alt="" aria-hidden="true" style="height:1.25em;width:auto;vertical-align:-0.25em"> Iron Sentinel</a>
+    <a href="/soc2" class="nav-link">SOC 2 Pack →</a>
+  </nav>
+  <div class="hero-badge">Free Resource — No Email Required</div>
+  <h1>SOC 2 Readiness <span>Checklist</span></h1>
+  <p>15 quick checks across all five Trust Services Criteria. Mark each Yes / Partial / No, tally your gaps, and see exactly where you stand before an auditor or enterprise buyer asks. The honest version — readiness ≠ certification.</p>
+</div>
+</section>
+</header>
+
+<main id="main">
+<div class="container body-wrap">
+
+  <div class="printbar"><button class="print-btn" onclick="window.print()">🖨 Print / Save as PDF</button></div>
+
+  <div class="intro"><strong>How to use:</strong> check each box you can honestly answer "yes" to. Every <em>un</em>checked item is a gap an auditor or enterprise buyer will likely find first. This is the lite version; the full <a href="/soc2">SOC 2 Readiness Pack ($147)</a> includes the complete checklist mapped to every criterion plus 8 policy templates.</div>
+
+  <section class="group" aria-labelledby="cc">
+    <h2 id="cc">🔐 Security / Common Criteria (the core)</h2>
+    <div class="gsub">The bulk of SOC 2 lives here.</div>
+    <div class="check"><input type="checkbox" id="c1"><label for="c1"><strong>1. Information Security Policy</strong> — written, approved, reviewed in the last 12 months.</label></div>
+    <div class="check"><input type="checkbox" id="c2"><label for="c2"><strong>2. Access control &amp; least privilege</strong> — access by role, reviewed periodically (joiner/mover/leaver).</label></div>
+    <div class="check"><input type="checkbox" id="c3"><label for="c3"><strong>3. MFA where it matters</strong> — enforced on email, admin consoles, VPN, critical SaaS.</label></div>
+    <div class="check"><input type="checkbox" id="c4"><label for="c4"><strong>4. Onboarding / offboarding</strong> — documented process revokes access the day someone leaves.</label></div>
+    <div class="check"><input type="checkbox" id="c5"><label for="c5"><strong>5. Vendor / subprocessor inventory</strong> — a list of vendors touching your data, each with a signed DPA.</label></div>
+    <div class="check"><input type="checkbox" id="c6"><label for="c6"><strong>6. Risk assessment &amp; register</strong> — risks identified, scored (likelihood × impact), owned.</label></div>
+    <div class="check"><input type="checkbox" id="c7"><label for="c7"><strong>7. Incident Response Plan</strong> — written, with roles + severity + notification steps — and tested.</label></div>
+    <div class="check"><input type="checkbox" id="c8"><label for="c8"><strong>8. Change management</strong> — code/infra changes reviewed and approved before production.</label></div>
+    <div class="check"><input type="checkbox" id="c9"><label for="c9"><strong>9. Security awareness training</strong> — at hire and annually, with records kept.</label></div>
+    <div class="check"><input type="checkbox" id="c10"><label for="c10"><strong>10. Logging &amp; monitoring</strong> — security events logged and alerts actually reviewed.</label></div>
+  </section>
+
+  <section class="group" aria-labelledby="av">
+    <h2 id="av">🟢 Availability</h2>
+    <div class="check"><input type="checkbox" id="c11"><label for="c11"><strong>11. Backups</strong> — automated <em>and</em> you've tested a restore (untested backups don't count).</label></div>
+    <div class="check"><input type="checkbox" id="c12"><label for="c12"><strong>12. Business continuity / DR</strong> — a documented plan for "what if the system goes down."</label></div>
+  </section>
+
+  <section class="group" aria-labelledby="co">
+    <h2 id="co">🔵 Confidentiality</h2>
+    <div class="check"><input type="checkbox" id="c13"><label for="c13"><strong>13. Data classification</strong> — you know what's sensitive and how each class is handled/encrypted.</label></div>
+  </section>
+
+  <section class="group" aria-labelledby="pi">
+    <h2 id="pi">🟣 Processing Integrity</h2>
+    <div class="check"><input type="checkbox" id="c14"><label for="c14"><strong>14. Input/processing controls</strong> — checks ensure data is processed completely and accurately.</label></div>
+  </section>
+
+  <section class="group" aria-labelledby="pr">
+    <h2 id="pr">🟠 Privacy</h2>
+    <div class="check"><input type="checkbox" id="c15"><label for="c15"><strong>15. Privacy notice &amp; data handling</strong> — if you collect personal data, there's a notice and a retention/deletion practice.</label></div>
+  </section>
+
+  <div class="score">
+    <h2>📊 Score yourself</h2>
+    <ul>
+      <li><strong>0–3 unchecked</strong> — Strong start. Tighten the gaps and you're close to readiness.</li>
+      <li><strong>4–8 unchecked</strong> — Typical for a growing SMB. A focused 60–90 days closes most of it.</li>
+      <li><strong>9+ unchecked</strong> — You'd stall a security questionnaire today. Start with policies + the risk register.</li>
+    </ul>
+  </div>
+
+  <div class="note"><strong>What "ready" actually means:</strong> readiness = your documentation and controls are in place and operating. <strong>A licensed CPA firm performs the actual SOC 2 audit</strong> — anyone promising "instant SOC 2 certification" is selling you a problem.</div>
+
+  <div class="cta-grid">
+    <div class="cta">
+      <h3>Do it yourself</h3>
+      <p>The full SOC 2 Readiness Pack — complete checklist + 8 policy templates.</p>
+      <a class="btn" href="/soc2">Get the Pack — $147 →</a>
+    </div>
+    <div class="cta">
+      <h3>Want a second opinion?</h3>
+      <p>Free 30-min Risk Snapshot — 15 questions, a real score, no pitch.</p>
+      <a class="btn alt" href="https://calendly.com/sanchez-ironsentinelhq/risk-snapshot" target="_blank" rel="noopener noreferrer">Book the Risk Snapshot →</a>
+    </div>
+  </div>
+
+</div>
+</main>
+
+<footer>
+<div class="container">
+  <div class="footer-inner">
+    <div class="footer-logo"><img src="/logo.png" alt="" aria-hidden="true" style="height:1.25em;width:auto;vertical-align:-0.25em"> Iron Sentinel</div>
+    <nav class="footer-links" aria-label="Footer navigation">
+      <a href="/">Home</a>
+      <a href="/download">Free Templates</a>
+      <a href="/soc2">SOC 2 Pack</a>
+      <a href="mailto:contact@ironsentinelhq.com">contact@ironsentinelhq.com</a>
+    </nav>
+    <p class="disc"><strong style="color:rgba(255,255,255,0.5)">Independence Disclosure:</strong> Iron Sentinel LLC is an independent private cybersecurity consultancy operating entirely separately from any federal employment held by its principal. Iron Sentinel does not represent, affiliate with, endorse, or perform work for any federal agency. We are not affiliated with the AICPA and do not perform SOC 2 audits.</p>
+  </div>
+</div>
+</footer>
+</body>
+</html>
