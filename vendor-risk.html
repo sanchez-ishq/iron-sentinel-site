@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<link rel="icon" type="image/png" href="/logo.png">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Free Vendor Risk Inventory (1-page template) | Iron Sentinel</title>
+<meta name="description" content="A free 1-page vendor risk inventory: list every vendor that touches your data, confirm a signed DPA or BAA, and rate each one with a 5-question screen. No email required — print or save as PDF.">
+<link rel="canonical" href="https://ironsentinelhq.com/vendor-risk">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Iron Sentinel">
+<meta property="og:title" content="Free Vendor Risk Inventory — 1-page template">
+<meta property="og:description" content="Every vendor that touches your data, in one list — with a signed agreement and a risk rating. The gap auditors and examiners check first. Free, no catch.">
+<meta property="og:url" content="https://ironsentinelhq.com/vendor-risk">
+<meta property="og:image" content="https://ironsentinelhq.com/logo.png">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Free Vendor Risk Inventory — 1-page template">
+<meta name="twitter:description" content="Every vendor that touches your data, in one list. Free, no catch.">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=DM+Serif+Display&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--navy:#1B2A4A;--blue:#2E5090;--gold:#C59A2E;--gold-text:#7B5800;--light:#F8F9FA;--white:#FFFFFF;--text:#333;--gray:#555;--green:#1E8449;--red:#B23A2E}
+body{font-family:'DM Sans',sans-serif;color:var(--text);line-height:1.6;background:var(--white)}
+.container{max-width:840px;margin:0 auto;padding:0 24px}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+a{color:var(--blue)}
+*:focus-visible{outline:3px solid var(--gold);outline-offset:3px;border-radius:3px}
+.nav{display:flex;justify-content:space-between;align-items:center;padding:20px 0}
+.logo{color:var(--white);font-family:'DM Serif Display',serif;font-size:22px;text-decoration:none;display:flex;align-items:center;gap:8px}
+.nav-link{color:var(--gold);text-decoration:none;font-weight:500;font-size:14px;padding:8px 18px;border:1px solid var(--gold);border-radius:6px}
+.nav-link:hover{background:var(--gold);color:var(--navy)}
+.hero{background:var(--navy);padding:56px 0 80px;position:relative}
+.hero::after{content:'';position:absolute;bottom:-2px;left:0;right:0;height:50px;background:var(--white);clip-path:polygon(0 100%,100% 100%,100% 0)}
+.hero-badge{display:inline-block;background:rgba(197,154,46,0.15);color:var(--gold);padding:6px 16px;border-radius:20px;font-size:13px;font-weight:500;margin-bottom:18px;border:1px solid rgba(197,154,46,0.3)}
+.hero h1{font-family:'DM Serif Display',serif;color:var(--white);font-size:clamp(30px,4.5vw,44px);line-height:1.15;margin-bottom:14px}
+.hero h1 span{color:var(--gold)}
+.hero p{color:rgba(255,255,255,0.85);font-size:17px;max-width:620px}
+.body-wrap{padding:8px 0 40px}
+.intro{background:var(--light);border-left:4px solid var(--gold);border-radius:10px;padding:18px 22px;margin:0 0 34px;font-size:14.5px;color:var(--gray)}
+.group{margin:0 0 30px}
+.group h2{font-family:'DM Serif Display',serif;color:var(--navy);font-size:22px;margin-bottom:6px}
+.group .gsub{color:var(--gray);font-size:13px;margin-bottom:14px}
+.tbl-wrap{overflow-x:auto;border:1px solid #E4E7EC;border-radius:10px}
+table.vr{width:100%;border-collapse:collapse;font-size:13px;min-width:680px}
+table.vr th{background:var(--navy);color:var(--white);text-align:left;padding:10px 10px;font-weight:500;font-size:12.5px;vertical-align:top}
+table.vr td{border-top:1px solid #E4E7EC;padding:0;vertical-align:top}
+table.vr td[contenteditable]{padding:10px;min-width:70px;color:var(--text)}
+table.vr td[contenteditable]:focus{background:#FCF7E8;outline:none}
+table.vr tr:nth-child(even) td{background:var(--light)}
+.addrow{margin:12px 0 4px}
+.addrow button{background:none;border:1px solid var(--gold);color:var(--gold-text);padding:8px 16px;border-radius:6px;font-weight:700;font-size:12.5px;cursor:pointer;font-family:inherit}
+.screen{counter-reset:q}
+.screen .q{display:flex;gap:12px;align-items:flex-start;padding:12px 14px;border:1px solid #E4E7EC;border-radius:10px;margin-bottom:10px;background:var(--white);font-size:14.5px}
+.screen .q::before{counter-increment:q;content:counter(q);background:var(--navy);color:var(--white);width:24px;height:24px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:13px;font-weight:700}
+.rating{background:var(--navy);color:var(--white);border-radius:14px;padding:28px;margin:24px 0}
+.rating h2{font-family:'DM Serif Display',serif;color:var(--gold);font-size:22px;margin-bottom:14px}
+.rating ul{list-style:none;display:flex;flex-direction:column;gap:10px}
+.rating li{font-size:14.5px;color:rgba(255,255,255,0.9);padding-left:24px;position:relative}
+.rating li::before{content:'▸';position:absolute;left:0;color:var(--gold)}
+.note{border:1px solid #E4E7EC;border-radius:10px;padding:18px 22px;font-size:14px;color:var(--gray);margin:0 0 34px}
+.note.win{border-left:4px solid var(--green);background:var(--light)}
+.cta-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:10px 0 8px}
+.cta{background:var(--light);border-radius:12px;padding:24px;border-top:3px solid var(--gold);text-align:center}
+.cta h3{color:var(--navy);font-size:16px;margin-bottom:6px}
+.cta p{color:var(--gray);font-size:13px;margin-bottom:14px}
+.btn{display:inline-block;background:var(--gold);color:var(--navy);padding:12px 22px;border-radius:8px;font-weight:700;font-size:14px;text-decoration:none}
+.btn.alt{background:var(--navy);color:var(--white)}
+.btn:hover{transform:translateY(-2px)}
+.printbar{text-align:center;margin:6px 0 30px}
+.print-btn{background:none;border:1px solid var(--gold);color:var(--gold-text);padding:10px 20px;border-radius:6px;font-weight:700;font-size:13px;cursor:pointer;font-family:inherit}
+footer{background:var(--navy);padding:36px 0;margin-top:40px}
+.footer-inner{display:flex;flex-direction:column;align-items:center;gap:12px;text-align:center}
+.footer-logo{color:var(--white);font-family:'DM Serif Display',serif;font-size:20px;display:flex;align-items:center;gap:8px}
+.footer-links{display:flex;gap:22px;flex-wrap:wrap;justify-content:center}
+.footer-links a{color:rgba(255,255,255,0.65);font-size:13px;text-decoration:none}
+.footer-links a:hover{color:var(--gold)}
+.disc{color:rgba(255,255,255,0.4);font-size:11px;max-width:700px;line-height:1.7;border-top:1px solid rgba(255,255,255,0.08);padding-top:14px;margin-top:8px}
+@media(max-width:680px){.cta-grid{grid-template-columns:1fr}}
+@media print{.hero,.nav,.printbar,footer{background:#fff!important;color:#000!important}.hero::after{display:none}.nav-link,.print-btn,.addrow{display:none}.hero h1,.hero p,.hero h1 span{color:#000!important}.rating{background:#fff!important;border:1px solid #000}.rating h2,.rating li{color:#000!important}table.vr th{background:#fff!important;color:#000!important;border:1px solid #000}.tbl-wrap{overflow:visible}}
+</style>
+</head>
+<body>
+<a href="#main" class="sr-only">Skip to main content</a>
+<header>
+<section class="hero">
+<div class="container">
+  <nav class="nav" aria-label="Main navigation">
+    <a href="/" class="logo" aria-label="Iron Sentinel — Home"><img src="/logo.png" alt="" aria-hidden="true" style="height:1.25em;width:auto;vertical-align:-0.25em"> Iron Sentinel</a>
+    <a href="/soc2" class="nav-link">SOC 2 Pack →</a>
+  </nav>
+  <div class="hero-badge">Free Resource — No Email Required</div>
+  <h1>Vendor Risk <span>Inventory</span></h1>
+  <p>Every vendor that touches your data, in one list — with a signed agreement and a risk rating. It's the single most-cited gap in audits, HIPAA reviews, and exams. Fill it in, keep it current, and you've closed the one examiners and enterprise buyers check first.</p>
+</div>
+</section>
+</header>
+
+<main id="main">
+<div class="container body-wrap">
+
+  <div class="printbar"><button class="print-btn" onclick="window.print()">🖨 Print / Save as PDF</button></div>
+
+  <div class="intro"><strong>How to use:</strong> list every vendor that can see or hold your data, confirm a signed agreement exists for each, and rate the risk with the 5-question screen below. This is the <em>lite</em> version; the full <a href="/soc2">SOC 2 Readiness Pack ($147)</a> includes the complete Vendor Risk Management Policy and vendor security questionnaire, plus 8 policy templates.</div>
+
+  <section class="group" aria-labelledby="step1">
+    <h2 id="step1">Step 1 — List every vendor that touches your data</h2>
+    <div class="gsub">SaaS apps, cloud/hosting, payroll/HR, email, backup, MSP/IT, payment processors, anyone with remote access. If it stores, processes, or can reach your customer / member / patient data, it goes on the list. Tap a cell to edit.</div>
+    <div class="tbl-wrap">
+      <table class="vr" id="vrtable">
+        <thead>
+          <tr>
+            <th style="width:18%">Vendor</th>
+            <th style="width:20%">What data they touch</th>
+            <th style="width:15%">Agreement on file? (DPA / BAA)</th>
+            <th style="width:12%">Renewal date</th>
+            <th style="width:9%">Risk (H/M/L)</th>
+            <th style="width:12%">Owner</th>
+            <th style="width:14%">Next action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td contenteditable="true"></td><td contenteditable="true"></td><td contenteditable="true"></td><td contenteditable="true"></td><td contenteditable="true"></td><td contenteditable="true"></td><td contenteditable="true"></td></tr>
+          <tr><td contenteditable="true"></td><td contenteditable="true"></td><td contenteditable="true"></td><td contenteditable="true"></td><td contenteditable="true"></td><td contenteditable="true"></td><td contenteditable="true"></td></tr>
+          <tr><td contenteditable="true"></td><td contenteditable="true"></td><td contenteditable="true"></td><td contenteditable="true"></td><td contenteditable="true"></td><td contenteditable="true"></td><td contenteditable="true"></td></tr>
+          <tr><td contenteditable="true"></td><td contenteditable="true"></td><td contenteditable="true"></td><td contenteditable="true"></td><td contenteditable="true"></td><td contenteditable="true"></td><td contenteditable="true"></td></tr>
+          <tr><td contenteditable="true"></td><td contenteditable="true"></td><td contenteditable="true"></td><td contenteditable="true"></td><td contenteditable="true"></td><td contenteditable="true"></td><td contenteditable="true"></td></tr>
+          <tr><td contenteditable="true"></td><td contenteditable="true"></td><td contenteditable="true"></td><td contenteditable="true"></td><td contenteditable="true"></td><td contenteditable="true"></td><td contenteditable="true"></td></tr>
+          <tr><td contenteditable="true"></td><td contenteditable="true"></td><td contenteditable="true"></td><td contenteditable="true"></td><td contenteditable="true"></td><td contenteditable="true"></td><td contenteditable="true"></td></tr>
+          <tr><td contenteditable="true"></td><td contenteditable="true"></td><td contenteditable="true"></td><td contenteditable="true"></td><td contenteditable="true"></td><td contenteditable="true"></td><td contenteditable="true"></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="addrow"><button type="button" onclick="addRow()">+ Add row</button></div>
+    <div class="note" style="margin-top:14px"><strong>DPA vs BAA:</strong> use a <strong>BAA</strong> (Business Associate Agreement) for any vendor that can see <strong>PHI / patient data</strong> (HIPAA) — see the <a href="/hipaa">HIPAA Compliance Pack</a>. Use a <strong>DPA</strong> (Data Processing Agreement) for other personal / customer / member data. A vendor touching PHI needs a BAA specifically; a generic DPA does not satisfy HIPAA.</div>
+  </section>
+
+  <section class="group screen" aria-labelledby="step2">
+    <h2 id="step2">Step 2 — Rate each vendor (5-question screen)</h2>
+    <div class="gsub">For each vendor, answer Yes / No. More "Yes" = higher risk = handle first.</div>
+    <div class="q">Do they <strong>store or process sensitive data</strong> (PII, PHI, financial, member/customer records)?</div>
+    <div class="q">Do they have <strong>direct access to your systems or network</strong> (integration, remote access, admin)?</div>
+    <div class="q">Is there <strong>no signed agreement</strong> on file (DPA/BAA), or has it expired?</div>
+    <div class="q">Can they <strong>not</strong> produce a current security attestation (SOC 2, ISO 27001, HITRUST, or equivalent)?</div>
+    <div class="q">Would an <strong>outage or breach at this vendor disrupt your operations or expose your data</strong>?</div>
+  </section>
+
+  <div class="rating">
+    <h2>Set the rating</h2>
+    <ul>
+      <li><strong>🔴 High</strong> — sensitive data <em>and</em> (no signed agreement, or no attestation, or direct system access). Fix the agreement first.</li>
+      <li><strong>🟡 Medium</strong> — sensitive data, but agreement + attestation are in place; review at renewal.</li>
+      <li><strong>🟢 Low</strong> — no sensitive data and no system access (e.g., a marketing tool with no PII).</li>
+    </ul>
+  </div>
+
+  <div class="note win"><strong>The 15-minute win:</strong> sort by 🔴 High, then look at every row where the agreement is <em>missing</em>. Each one is a vendor that can see your data with nothing signed governing it — the exact finding an auditor, examiner, or insurer flags first. Getting those agreements signed is the highest-ROI move on this page.</div>
+
+  <div class="cta-grid">
+    <div class="cta">
+      <h3>Do it yourself</h3>
+      <p>The full Vendor Risk Management Policy + questionnaire, in the SOC 2 Readiness Pack — with 8 policy templates.</p>
+      <a class="btn" href="/soc2">Get the Pack — $147 →</a>
+    </div>
+    <div class="cta">
+      <h3>Want a second opinion?</h3>
+      <p>Free 30-min Risk Snapshot — a real read on your top gaps, no pitch.</p>
+      <a class="btn alt" href="https://calendly.com/sanchez-ironsentinelhq/risk-snapshot" target="_blank" rel="noopener noreferrer">Book the Risk Snapshot →</a>
+    </div>
+  </div>
+
+</div>
+</main>
+
+<footer>
+<div class="container">
+  <div class="footer-inner">
+    <div class="footer-logo"><img src="/logo.png" alt="" aria-hidden="true" style="height:1.25em;width:auto;vertical-align:-0.25em"> Iron Sentinel</div>
+    <nav class="footer-links" aria-label="Footer navigation">
+      <a href="/">Home</a>
+      <a href="/download">Free Templates</a>
+      <a href="/soc2-checklist">SOC 2 Checklist</a>
+      <a href="/soc2">SOC 2 Pack</a>
+      <a href="mailto:contact@ironsentinelhq.com">contact@ironsentinelhq.com</a>
+    </nav>
+    <p class="disc"><strong style="color:rgba(255,255,255,0.5)">Independence Disclosure:</strong> Iron Sentinel LLC is an independent private cybersecurity consultancy operating entirely separately from any federal employment held by its principal. Iron Sentinel does not represent, affiliate with, endorse, or perform work for any federal agency. This template is educational and is not legal advice — confirm agreement requirements for your jurisdiction and framework. We are not affiliated with the AICPA and do not perform SOC 2 audits.</p>
+  </div>
+</div>
+</footer>
+<script>
+function addRow(){
+  var t=document.getElementById('vrtable').getElementsByTagName('tbody')[0];
+  var r=t.insertRow();
+  for(var i=0;i<7;i++){var c=r.insertCell();c.setAttribute('contenteditable','true');}
+}
+</script>
+</body>
+</html>
