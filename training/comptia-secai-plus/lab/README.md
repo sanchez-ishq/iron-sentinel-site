@@ -5,15 +5,38 @@ Hands-on tooling for the CompTIA SecAI+ study kit, designed to run on **SENTRY**
 offline, nothing leaves the box. Running a self-hosted model *is itself* the Domain 4
 "private model / data sovereignty" concept in practice.
 
+## Quick start (Windows)
+Double-click **`Study-SecAI.bat`** (one level up, in the kit root). It opens a menu
+to drill any flashcard deck or run a question-bank quiz — all offline, no setup.
+Only Python 3 is required (the launcher finds `py` or `python` for you). Ollama is
+**not** needed for flashcards or plain quizzes; it's only used by the quiz `--explain`
+option on SENTRY.
+
 ## Prerequisites
-- Ollama running with a model pulled (default `deepseek-r1:14b`):
+- **Python 3** (stdlib only — no pip installs needed). This alone covers flashcards
+  and graded quizzes.
+- *Optional, for `quiz.py --explain` only:* Ollama running with a model pulled
+  (default `deepseek-r1:14b`), e.g. on SENTRY:
   ```bash
   ollama pull deepseek-r1:14b
   ollama ps            # confirm PROCESSOR shows ~100% GPU
   ```
-- Python 3 (stdlib only — no pip installs needed).
 
 ## Tools
+
+### 0. `flashcards.py` — offline flashcard drill
+Parses every `flashcards-*.md` deck (360 cards), shows the front, reveals the back on
+Enter, and lets you self-grade. Misses are listed at the end to copy into the
+Weak-area log. Fully offline — no Ollama, no network.
+
+```bash
+python flashcards.py                 # all decks, shuffled
+python flashcards.py --deck week1    # one deck (filename substring)
+python flashcards.py --deck acronyms --n 20
+python flashcards.py --order linear  # keep deck order
+python flashcards.py --list          # parsed card counts
+```
+Grade with: `[Enter]` = got it · `m` = missed · `s` = skip · `q` = quit.
 
 ### 1. `quiz.py` — offline question-bank drill
 Parses the `qbank-*.md` files in the kit, quizzes you, grades you, and (optionally)
