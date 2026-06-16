@@ -2,6 +2,7 @@
 
 **Scope:** Every acronym on the **official CompTIA SecAI+ CY0-001 V1 acronym list** (Objectives doc v2.0). CompTIA states candidates need a **working knowledge of all of these** — you must be able to *expand* each one and *place* it in the right domain.
 **How to use:** Cover the indented answer, read the **bold acronym front**, say the expansion *and* where it shows up on the exam, then reveal. Mark misses and re-drill. ~62 cards. (Anki-importable TSV at the bottom.)
+**See also:** `07-official-acronyms-and-lab.md` — the same 62 acronyms as a lookup table, plus the official hardware/software lab list.
 
 > This deck cuts across all four domains — drill it in parallel with the weekly decks, not as a separate week. The AI-specific ones (**ATLAS, MCP, MDLC, RMF, MLOps, GAN, SLM, RAG, SOAR, SCA**) are the ones candidates miss; get those automatic first.
 

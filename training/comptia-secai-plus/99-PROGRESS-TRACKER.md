@@ -12,7 +12,18 @@ Log every quiz/practice-exam score here. Don't advance a week below **80%** (85%
 | 4 | D3 — AI-assisted security (24%) | 03 | | | | |
 | 5 | D4 — AI GRC (19%) | 04 | | | | |
 
-## Question banks (360 questions + ~84 in-module ≈ 444 total)
+## Flashcard decks (drill to fluency; log weak cards in the Weak-area log below)
+
+| Deck | File | Coverage | First pass | Confident? |
+|------|------|----------|-----------|------------|
+| Week 1 | flashcards-week1.md | D1 terminology | | |
+| Week 2 | flashcards-week2.md | D2 terminology | | |
+| Week 3 | flashcards-week3.md | D2 applied defense & controls | | |
+| Week 4 | flashcards-week4.md | D3 terminology | | |
+| Week 5 | flashcards-week5.md | D4 terminology | | |
+| Acronyms | flashcards-acronyms.md | All 62 official acronyms (cross-cutting) | | |
+
+## Question banks (300 bank + 120 mock + ~208 in-module ≈ 628 total questions)
 
 Work each bank after its module. Re-test below target before advancing.
 
@@ -24,9 +35,11 @@ Work each bank after its module. Re-test below target before advancing.
 | Domain 3 | qbank-domain3.md | 70 | 80% | | | |
 | Domain 4 | qbank-domain4.md | 55 | 80% | | | |
 
+> In-module practice questions (~208): Module 01 = 60, Module 02 = 52, Module 03 = 51, Module 04 = 45 — answer these as you read, before the standalone banks.
+
 ## Full-length practice exams (Week 6 — always timed, 60 Q / 60 min)
 
-Use `qbank-final-mock-60.md` (interleaved, weighted 17/40/24/19) for PE #1. Re-mix or re-sit for PE #2.
+Use `qbank-final-mock-60.md` (interleaved, weighted 17/40/24/19) for PE #1, then `qbank-final-mock-2-60.md` (second independent 60 Q mock) for PE #2.
 
 | Exam | Date | Raw (/60) | Weakest domain | Notes |
 |------|------|-----------|----------------|-------|
