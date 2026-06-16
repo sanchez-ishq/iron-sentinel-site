@@ -119,3 +119,17 @@ full-length `qbank-final-mock-60.md`. Target **85%+** on each bank before bookin
 - `02-domain2-securing-ai-systems.md` (CISO) ← largest, 40%
 - `03-domain3-ai-assisted-security.md` (CTO)
 - `04-domain4-ai-governance-risk-compliance.md` (CSO)
+- `07-official-acronyms-and-lab.md` — official acronym reference table + hardware/software lab list
+
+## Flashcard decks (drill alongside the modules)
+- `flashcards-week1.md` — Domain 1 terminology
+- `flashcards-week2.md` — Domain 2 terminology
+- `flashcards-week3.md` — Domain 2 applied defense & controls
+- `flashcards-week4.md` — Domain 3 terminology
+- `flashcards-week5.md` — Domain 4 terminology
+- `flashcards-acronyms.md` — all 62 official acronyms (cross-cutting; drill in parallel, not as a separate week)
+
+## Question banks & mocks
+- `qbank-domain1.md` (55) · `qbank-domain2-part1.md` (60) · `qbank-domain2-part2.md` (60) · `qbank-domain3.md` (70) · `qbank-domain4.md` (55) — **300 weighted bank questions**, each with an answer key
+- `qbank-final-mock-60.md` (60) — full-length timed mock for PE #1
+- `qbank-final-mock-2-60.md` (60) — second full-length timed mock for PE #2

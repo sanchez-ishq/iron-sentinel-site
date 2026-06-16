@@ -3,6 +3,8 @@
 Source: **CompTIA SecAI+ CY0-001 V1 Exam Objectives, Document Version 2.0 (© 2025 CompTIA).**
 CompTIA states candidates should have a **working knowledge of all listed acronyms**. Drill these.
 
+> **To drill:** this file is the reference table + lab list. The spaced-repetition deck for the same 62 acronyms (with Anki/Quizlet TSV export) is `flashcards-acronyms.md` — use that for active recall, this for lookup.
+
 ---
 
 ## Official acronym list (know all of these)
