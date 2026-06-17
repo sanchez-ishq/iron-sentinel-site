@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<link rel="icon" type="image/png" href="/logo.png">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SOC 2 vs. HIPAA: Which One Does Your Business Actually Need? | Iron Sentinel</title>
+<meta name="description" content="SOC 2 or HIPAA — or both? A plain-English guide to which compliance framework actually applies to your business, who's asking for it, and where to start. Free checklist, no email required.">
+<link rel="canonical" href="https://ironsentinelhq.com/soc2-vs-hipaa">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Iron Sentinel">
+<meta property="og:title" content="SOC 2 vs. HIPAA: Which One Does Your Business Actually Need?">
+<meta property="og:description" content="A plain-English guide to which compliance framework applies to your business, who asks for it, and where to start.">
+<meta property="og:url" content="https://ironsentinelhq.com/soc2-vs-hipaa">
+<meta property="og:image" content="https://ironsentinelhq.com/logo.png">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="SOC 2 vs. HIPAA: Which One Does Your Business Actually Need?">
+<meta name="twitter:description" content="Which compliance framework applies to your business, and where to start. Free checklist, no email.">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=DM+Serif+Display&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--navy:#1B2A4A;--blue:#2E5090;--gold:#C59A2E;--gold-text:#7B5800;--light:#F8F9FA;--white:#FFFFFF;--text:#333;--gray:#555;--green:#1E8449;--red:#B23A2E}
+body{font-family:'DM Sans',sans-serif;color:var(--text);line-height:1.6;background:var(--white)}
+.container{max-width:840px;margin:0 auto;padding:0 24px}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+a{color:var(--blue)}
+*:focus-visible{outline:3px solid var(--gold);outline-offset:3px;border-radius:3px}
+.nav{display:flex;justify-content:space-between;align-items:center;padding:20px 0}
+.logo{color:var(--white);font-family:'DM Serif Display',serif;font-size:22px;text-decoration:none;display:flex;align-items:center;gap:8px}
+.nav-link{color:var(--gold);text-decoration:none;font-weight:500;font-size:14px;padding:8px 18px;border:1px solid var(--gold);border-radius:6px}
+.nav-link:hover{background:var(--gold);color:var(--navy)}
+.hero{background:var(--navy);padding:56px 0 80px;position:relative}
+.hero::after{content:'';position:absolute;bottom:-2px;left:0;right:0;height:50px;background:var(--white);clip-path:polygon(0 100%,100% 100%,100% 0)}
+.hero-badge{display:inline-block;background:rgba(197,154,46,0.15);color:var(--gold);padding:6px 16px;border-radius:20px;font-size:13px;font-weight:500;margin-bottom:18px;border:1px solid rgba(197,154,46,0.3)}
+.hero h1{font-family:'DM Serif Display',serif;color:var(--white);font-size:clamp(30px,4.5vw,44px);line-height:1.15;margin-bottom:14px}
+.hero h1 span{color:var(--gold)}
+.hero p{color:rgba(255,255,255,0.85);font-size:17px;max-width:640px}
+.body-wrap{padding:8px 0 40px}
+.intro{background:var(--light);border-left:4px solid var(--gold);border-radius:10px;padding:18px 22px;margin:0 0 34px;font-size:14.5px;color:var(--gray)}
+.group{margin:0 0 30px}
+.group h2{font-family:'DM Serif Display',serif;color:var(--navy);font-size:24px;margin:0 0 10px}
+.group h3{color:var(--navy);font-size:17px;margin:18px 0 6px}
+.group p{margin:0 0 12px;font-size:15.5px}
+.group ul{margin:0 0 14px 20px;font-size:15.5px}
+.group li{margin-bottom:6px}
+.compare{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:8px 0 24px}
+.col{border:1px solid #E4E7EC;border-radius:12px;padding:22px;border-top:3px solid var(--gold)}
+.col h3{color:var(--navy);font-size:18px;margin:0 0 4px}
+.col .who{color:var(--gray);font-size:13px;margin-bottom:12px}
+.col ul{margin:0 0 0 18px;font-size:14px}
+.tldr{background:var(--navy);color:var(--white);border-radius:14px;padding:28px;margin:24px 0}
+.tldr h2{font-family:'DM Serif Display',serif;color:var(--gold);font-size:22px;margin-bottom:12px}
+.tldr ul{list-style:none;display:flex;flex-direction:column;gap:10px}
+.tldr li{font-size:14.5px;color:rgba(255,255,255,0.9);padding-left:24px;position:relative}
+.tldr li::before{content:'▸';position:absolute;left:0;color:var(--gold)}
+.note{border:1px solid #E4E7EC;border-radius:10px;padding:18px 22px;font-size:14px;color:var(--gray);margin:0 0 34px}
+.note.win{border-left:4px solid var(--green);background:var(--light)}
+.cta-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:10px 0 8px}
+.cta{background:var(--light);border-radius:12px;padding:24px;border-top:3px solid var(--gold);text-align:center}
+.cta h3{color:var(--navy);font-size:16px;margin-bottom:6px}
+.cta p{color:var(--gray);font-size:13px;margin-bottom:14px}
+.btn{display:inline-block;background:var(--gold);color:var(--navy);padding:12px 22px;border-radius:8px;font-weight:700;font-size:14px;text-decoration:none}
+.btn.alt{background:var(--navy);color:var(--white)}
+.btn:hover{transform:translateY(-2px)}
+footer{background:var(--navy);padding:36px 0;margin-top:40px}
+.footer-inner{display:flex;flex-direction:column;align-items:center;gap:12px;text-align:center}
+.footer-logo{color:var(--white);font-family:'DM Serif Display',serif;font-size:20px;display:flex;align-items:center;gap:8px}
+.footer-links{display:flex;gap:22px;flex-wrap:wrap;justify-content:center}
+.footer-links a{color:rgba(255,255,255,0.65);font-size:13px;text-decoration:none}
+.footer-links a:hover{color:var(--gold)}
+.disc{color:rgba(255,255,255,0.4);font-size:11px;max-width:700px;line-height:1.7;border-top:1px solid rgba(255,255,255,0.08);padding-top:14px;margin-top:8px}
+@media(max-width:680px){.compare,.cta-grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<a href="#main" class="sr-only">Skip to main content</a>
+<header>
+<section class="hero">
+<div class="container">
+  <nav class="nav" aria-label="Main navigation">
+    <a href="/" class="logo" aria-label="Iron Sentinel — Home"><img src="/logo.png" alt="" aria-hidden="true" style="height:1.25em;width:auto;vertical-align:-0.25em"> Iron Sentinel</a>
+    <a href="/soc2" class="nav-link">SOC 2 Pack →</a>
+  </nav>
+  <div class="hero-badge">Plain-English Compliance Guide</div>
+  <h1>SOC 2 vs. HIPAA: <span>which do you actually need?</span></h1>
+  <p>Two of the most-requested compliance frameworks in the US — and the source of a lot of confusion. They protect different things, for different reasons, and which one applies to you usually comes down to one question: <em>what data do you touch, and who's asking?</em></p>
+</div>
+</section>
+</header>
+
+<main id="main">
+<div class="container body-wrap">
+
+  <div class="intro"><strong>The 30-second answer:</strong> If you handle <strong>protected health information (PHI)</strong> for a healthcare provider, plan, or their vendors, <strong>HIPAA</strong> is a legal requirement. If an <strong>enterprise customer</strong> is asking how you protect <em>their</em> data before they'll sign, they almost always mean <strong>SOC 2</strong>. Plenty of companies — especially health-tech SaaS — end up needing both.</div>
+
+  <section class="group">
+    <h2>The core difference</h2>
+    <p>People treat SOC 2 and HIPAA as interchangeable "security stamps." They're not. One is a voluntary report you choose to produce to win business; the other is federal law you're obligated to follow.</p>
+    <div class="compare">
+      <div class="col">
+        <h3>SOC 2</h3>
+        <div class="who">Driven by your <strong>customers</strong></div>
+        <ul>
+          <li>An <strong>attestation report</strong> issued by a licensed CPA firm under AICPA standards — not a government "certification."</li>
+          <li>Built around five Trust Services Criteria (Security, Availability, Processing Integrity, Confidentiality, Privacy).</li>
+          <li>Voluntary — but enterprise buyers frequently require it before they'll sign.</li>
+          <li>Common for B2B SaaS and any company storing or processing customer data in the cloud.</li>
+        </ul>
+      </div>
+      <div class="col">
+        <h3>HIPAA</h3>
+        <div class="who">Driven by <strong>federal law</strong></div>
+        <ul>
+          <li>A US law (Privacy, Security, and Breach Notification Rules) enforced by HHS — mandatory, with real penalties.</li>
+          <li>Applies to "covered entities" (providers, health plans) and their "business associates" (vendors touching PHI).</li>
+          <li>There is no official government HIPAA "certificate" — compliance is an ongoing obligation, not a one-time pass.</li>
+          <li>Common for clinics, health-tech, billing companies, and any vendor handling patient data.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="group">
+    <h2>Who needs SOC 2</h2>
+    <p>You're probably looking at SOC 2 if any of these sound familiar:</p>
+    <ul>
+      <li>A prospect's security or procurement team sent you a questionnaire — or asked for "your SOC 2" — during the sales process.</li>
+      <li>You sell software or a service that stores, processes, or transmits your customers' data.</li>
+      <li>You're moving upmarket and bigger deals keep stalling at the security review.</li>
+    </ul>
+    <p>SOC 2 comes in two flavors: <strong>Type I</strong> (your controls are designed properly at a point in time) and <strong>Type II</strong> (they actually operated effectively over a period, usually 3–12 months). Enterprise buyers generally want Type II.</p>
+  </section>
+
+  <section class="group">
+    <h2>Who needs HIPAA</h2>
+    <p>HIPAA isn't optional and it isn't customer-driven — it's triggered by the <em>data itself</em>. You're in scope if:</p>
+    <ul>
+      <li>You're a healthcare provider, health plan, or healthcare clearinghouse (a "covered entity").</li>
+      <li>You're a vendor that creates, receives, maintains, or transmits PHI on a covered entity's behalf (a "business associate") — e.g., a SaaS tool used by a clinic, a billing service, or a cloud host.</li>
+      <li>If you're a business associate, you'll typically be asked to sign a <strong>Business Associate Agreement (BAA)</strong> before you can handle PHI.</li>
+    </ul>
+  </section>
+
+  <section class="group">
+    <h2>Can you need both? Often, yes.</h2>
+    <p>A health-tech SaaS company is the classic case: HIPAA applies because you handle PHI, <em>and</em> your enterprise hospital customers ask for SOC 2 before they'll buy. The good news is the work overlaps heavily — access control, encryption, logging, vendor management, and incident response satisfy requirements on both sides. Build the controls once, map them to both frameworks, and you avoid doing the work twice.</p>
+  </section>
+
+  <div class="tldr">
+    <h2>Quick decision guide</h2>
+    <ul>
+      <li><strong>Handle PHI for healthcare?</strong> → HIPAA is mandatory. Start there.</li>
+      <li><strong>Enterprise customers gating deals on security?</strong> → You need SOC 2.</li>
+      <li><strong>Health-tech selling to providers?</strong> → Plan for both; build controls once and map them.</li>
+      <li><strong>Neither yet, but growing?</strong> → A readiness checklist now saves a scramble later.</li>
+    </ul>
+  </div>
+
+  <div class="note win"><strong>One honest caveat:</strong> readiness is not certification. A checklist or a readiness pack gets you organized and closes obvious gaps — but a SOC 2 report still requires an independent CPA firm, and HIPAA is an ongoing legal obligation, not a one-time badge. Anyone selling you an instant "SOC 2 certificate" is selling something that doesn't exist.</div>
+
+  <section class="group">
+    <h2>Where to start — free</h2>
+    <p>Before you spend a dollar, find out where you actually stand. These take a few minutes and need no email:</p>
+    <div class="cta-grid">
+      <div class="cta">
+        <h3>SOC 2 Readiness Checklist</h3>
+        <p>15 checks across all five Trust Services Criteria. See your gaps before an auditor does.</p>
+        <a href="/soc2-checklist" class="btn">Open the Checklist →</a>
+      </div>
+      <div class="cta">
+        <h3>Vendor Risk Inventory</h3>
+        <p>List every vendor that touches your data and confirm you have a signed DPA or BAA.</p>
+        <a href="/vendor-risk" class="btn alt">Open the Template →</a>
+      </div>
+    </div>
+    <p style="margin-top:18px">Ready to move faster? The <a href="/soc2">SOC 2 Readiness Pack</a> and <a href="/hipaa">HIPAA Compliance Pack</a> ($147 each) give you the full mapped checklist plus policy templates — or grab a free <a href="/download">NIST-aligned policy template</a> to start. Want a human read on your situation? <a href="/#book">Book a free Risk Snapshot call</a>.</p>
+  </section>
+
+</div>
+</main>
+
+<footer>
+<div class="container">
+  <div class="footer-inner">
+    <div class="footer-logo"><img src="/logo.png" alt="" aria-hidden="true" style="height:1.25em;width:auto;vertical-align:-0.25em"> Iron Sentinel LLC</div>
+    <nav class="footer-links" aria-label="Footer navigation">
+      <a href="/">Home</a>
+      <a href="/soc2-checklist">SOC 2 Checklist</a>
+      <a href="/vendor-risk">Vendor Risk Tool</a>
+      <a href="/soc2">SOC 2 Pack</a>
+      <a href="/hipaa">HIPAA Pack</a>
+      <a href="/download">Free Templates</a>
+    </nav>
+    <p class="disc"><strong>Educational information only — not legal or compliance advice.</strong> SOC 2 is an AICPA attestation performed by an independent licensed CPA firm; Iron Sentinel is not a CPA firm and does not issue SOC 2 reports. HIPAA compliance is an ongoing legal obligation; there is no official government HIPAA certification. Consult qualified counsel and a licensed auditor for your specific situation.</p>
+    <p class="disc"><strong>Independence Disclosure:</strong> Iron Sentinel LLC is an independent private cybersecurity consultancy. This business operates entirely separately from any federal employment held by its principal. Iron Sentinel does not represent, affiliate with, endorse, or perform work for any federal agency. No federal resources, time, or proprietary information are used in the operation of Iron Sentinel LLC.</p>
+  </div>
+</div>
+</footer>
+
+</body>
+</html>
