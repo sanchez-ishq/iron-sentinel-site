@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<link rel="icon" type="image/png" href="/logo.png">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Governance Readiness Scorecard (free, no email to start) | Iron Sentinel</title>
+<meta name="description" content="Is your business governing its AI tools — or exposed? Answer 10 quick yes/no questions and get an AI Governance Readiness Score mapped to the NIST AI RMF, with the gaps to fix first. Free.">
+<link rel="canonical" href="https://ironsentinelhq.com/ai-readiness-scorecard">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Iron Sentinel">
+<meta property="og:title" content="AI Governance Readiness Scorecard — free">
+<meta property="og:description" content="10 yes/no questions. Get your AI Governance Readiness Score mapped to NIST AI RMF and the gaps to fix first.">
+<meta property="og:url" content="https://ironsentinelhq.com/ai-readiness-scorecard">
+<meta property="og:image" content="https://ironsentinelhq.com/logo.png">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="AI Governance Readiness Scorecard — free">
+<meta name="twitter:description" content="10 questions to score how well your business governs its AI tools.">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=DM+Serif+Display&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--navy:#1B2A4A;--blue:#2E5090;--gold:#C59A2E;--gold-text:#7B5800;--light:#F8F9FA;--white:#FFFFFF;--text:#333;--gray:#555;--green:#1E8449;--amber:#B8860B;--red:#B23A2E}
+body{font-family:'DM Sans',sans-serif;color:var(--text);line-height:1.6;background:var(--white)}
+.container{max-width:760px;margin:0 auto;padding:0 24px}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+a{color:var(--blue)}
+*:focus-visible{outline:3px solid var(--gold);outline-offset:3px;border-radius:3px}
+.nav{display:flex;justify-content:space-between;align-items:center;padding:20px 0}
+.logo{color:var(--white);font-family:'DM Serif Display',serif;font-size:22px;text-decoration:none;display:flex;align-items:center;gap:8px}
+.nav-link{color:var(--gold);text-decoration:none;font-weight:500;font-size:14px;padding:8px 18px;border:1px solid var(--gold);border-radius:6px}
+.nav-link:hover{background:var(--gold);color:var(--navy)}
+.hero{background:var(--navy);padding:50px 0 70px;position:relative}
+.hero::after{content:'';position:absolute;bottom:-2px;left:0;right:0;height:46px;background:var(--white);clip-path:polygon(0 100%,100% 100%,100% 0)}
+.hero-badge{display:inline-block;background:rgba(197,154,46,0.15);color:var(--gold);padding:6px 16px;border-radius:20px;font-size:13px;font-weight:500;margin-bottom:16px;border:1px solid rgba(197,154,46,0.3)}
+.hero h1{font-family:'DM Serif Display',serif;color:var(--white);font-size:clamp(28px,4.2vw,40px);line-height:1.15;margin-bottom:12px}
+.hero h1 span{color:var(--gold)}
+.hero p{color:rgba(255,255,255,0.85);font-size:16.5px;max-width:600px}
+.body-wrap{padding:8px 0 40px}
+.intro{background:var(--light);border-left:4px solid var(--gold);border-radius:10px;padding:16px 20px;margin:0 0 26px;font-size:14px;color:var(--gray)}
+.q{border:1px solid #E4E7EC;border-radius:12px;padding:16px 18px;margin-bottom:12px;display:flex;gap:14px;align-items:flex-start;justify-content:space-between}
+.q.answered{border-color:#cdd6e0;background:var(--light)}
+.q .qt{font-size:15px}
+.q .qt b{color:var(--navy)}
+.q .qmap{display:block;color:var(--gray);font-size:12px;margin-top:3px}
+.toggle{display:flex;gap:6px;flex-shrink:0}
+.toggle button{border:1px solid #cdd6e0;background:#fff;color:var(--gray);padding:7px 14px;border-radius:7px;font-weight:700;font-size:13px;cursor:pointer;font-family:inherit}
+.toggle button[aria-pressed="true"][data-v="1"]{background:var(--green);border-color:var(--green);color:#fff}
+.toggle button[aria-pressed="true"][data-v="0"]{background:var(--red);border-color:var(--red);color:#fff}
+.scorebar{position:sticky;bottom:0;background:var(--white);border-top:1px solid #E4E7EC;padding:14px 0;margin-top:8px}
+.scorebar .inner{display:flex;align-items:center;justify-content:space-between;gap:16px}
+.scorebar .prog{font-size:13.5px;color:var(--gray)}
+.btn{display:inline-block;background:var(--gold);color:var(--navy);padding:12px 24px;border-radius:8px;font-weight:700;font-size:15px;text-decoration:none;border:none;cursor:pointer;font-family:inherit}
+.btn:disabled{opacity:.45;cursor:not-allowed}
+.btn.alt{background:var(--navy);color:#fff}
+.result{display:none;margin-top:18px}
+.result.show{display:block}
+.result-card{border-radius:14px;padding:28px;color:#fff}
+.result-card.exposed{background:var(--red)}
+.result-card.partial{background:var(--amber)}
+.result-card.managed{background:var(--green)}
+.result-card .num{font-family:'DM Serif Display',serif;font-size:46px;line-height:1}
+.result-card .tier{font-size:20px;font-weight:700;margin:4px 0 8px}
+.result-card p{font-size:15px;color:rgba(255,255,255,0.92)}
+.recs{border:1px solid #E4E7EC;border-radius:12px;padding:20px 22px;margin-top:16px}
+.recs h2{font-family:'DM Serif Display',serif;color:var(--navy);font-size:20px;margin-bottom:8px}
+.recs ul{margin:0 0 0 18px;font-size:14.5px}
+.recs li{margin-bottom:7px}
+.capture{background:var(--navy);border-radius:14px;padding:24px;margin-top:16px;color:#fff}
+.capture h2{font-family:'DM Serif Display',serif;color:var(--gold);font-size:20px;margin-bottom:6px}
+.capture p{font-size:14px;color:rgba(255,255,255,0.82);margin-bottom:14px}
+.capture form{display:flex;gap:10px;flex-wrap:wrap}
+.capture input{flex:1;min-width:200px;padding:12px 14px;border-radius:8px;border:none;font-size:15px;font-family:inherit}
+.capture .fine{font-size:11.5px;color:rgba(255,255,255,0.5);margin-top:10px}
+footer{background:var(--navy);padding:34px 0;margin-top:40px}
+.footer-inner{display:flex;flex-direction:column;align-items:center;gap:12px;text-align:center}
+.footer-logo{color:var(--white);font-family:'DM Serif Display',serif;font-size:20px;display:flex;align-items:center;gap:8px}
+.footer-links{display:flex;gap:22px;flex-wrap:wrap;justify-content:center}
+.footer-links a{color:rgba(255,255,255,0.65);font-size:13px;text-decoration:none}
+.footer-links a:hover{color:var(--gold)}
+.disc{color:rgba(255,255,255,0.4);font-size:11px;max-width:700px;line-height:1.7;border-top:1px solid rgba(255,255,255,0.08);padding-top:14px;margin-top:8px}
+</style>
+</head>
+<body>
+<a href="#main" class="sr-only">Skip to main content</a>
+<header>
+<section class="hero">
+<div class="container">
+  <nav class="nav" aria-label="Main navigation">
+    <a href="/" class="logo" aria-label="Iron Sentinel — Home"><img src="/logo.png" alt="" aria-hidden="true" style="height:1.25em;width:auto;vertical-align:-0.25em"> Iron Sentinel</a>
+    <a href="/" class="nav-link">← Home</a>
+  </nav>
+  <div class="hero-badge">Free · No email required to see your score</div>
+  <h1>AI Governance <span>Readiness Scorecard</span></h1>
+  <p>Your team is already using AI tools. The question is whether you're <em>governing</em> them. Answer 10 quick yes/no questions for a readiness score mapped to the NIST AI RMF — and the gaps to fix first.</p>
+</div>
+</section>
+</header>
+
+<main id="main">
+<div class="container body-wrap">
+  <div class="intro"><strong>How to score:</strong> answer honestly — "yes" only if it's actually written down or in practice, not just intended. Each question maps to a NIST AI RMF function (Govern, Map, Measure, Manage). Nothing is sent anywhere unless you choose to at the end.</div>
+
+  <form id="quiz" aria-label="AI Governance readiness questions"></form>
+
+  <div class="scorebar">
+    <div class="container inner">
+      <span class="prog" id="prog">0 of 10 answered</span>
+      <button type="button" class="btn" id="seeBtn" disabled>See my score →</button>
+    </div>
+  </div>
+
+  <section class="result" id="result" aria-live="polite">
+    <div class="result-card" id="rcard">
+      <div class="num"><span id="scoreNum">0</span>/10</div>
+      <div class="tier" id="tierName">—</div>
+      <p id="tierDesc">—</p>
+    </div>
+    <div class="recs">
+      <h2>What to do next</h2>
+      <ul id="recList"></ul>
+    </div>
+    <div class="capture">
+      <h2>Get the AI Governance Action Checklist</h2>
+      <p>We'll email you the one-page checklist that turns these gaps into a fix-it list — mapped to NIST AI RMF.</p>
+      <form id="nl" aria-label="Email the action checklist">
+        <input type="email" id="email" required placeholder="you@company.com" aria-label="Your email">
+        <button type="submit" class="btn">Email it to me →</button>
+      </form>
+      <p id="nlMsg" role="status" style="display:none;font-size:14px;margin-top:10px"></p>
+      <p class="fine">No spam. We'll also send The Sentinel Brief — one practical compliance move each week. Unsubscribe anytime.</p>
+    </div>
+  </section>
+</div>
+</main>
+
+<footer>
+<div class="container">
+  <div class="footer-inner">
+    <div class="footer-logo"><img src="/logo.png" alt="" aria-hidden="true" style="height:1.25em;width:auto;vertical-align:-0.25em"> Iron Sentinel LLC</div>
+    <nav class="footer-links" aria-label="Footer navigation">
+      <a href="/">Home</a>
+      <a href="/ai">AI Governance Pack</a>
+      <a href="/ai-scribe-hipaa-audit">AI Scribe HIPAA Audit</a>
+      <a href="/soc2-vs-hipaa">SOC 2 vs HIPAA</a>
+      <a href="/vendor-risk">Vendor Risk Tool</a>
+    </nav>
+    <p class="disc"><strong>Educational information only — not legal advice.</strong> This self-assessment is a general readiness indicator, not a formal audit or a NIST AI RMF conformity assessment. Consult qualified counsel and a security professional for your specific situation.</p>
+    <p class="disc"><strong>Independence Disclosure:</strong> Iron Sentinel LLC is an independent private cybersecurity consultancy. This business operates entirely separately from any federal employment held by its principal. Iron Sentinel does not represent, affiliate with, endorse, or perform work for any federal agency. No federal resources, time, or proprietary information are used in the operation of Iron Sentinel LLC.</p>
+  </div>
+</div>
+</footer>
+
+<script>
+(function(){
+  var WEB3FORMS_KEY = "f4b35657-1ddb-4910-a049-f74a2b18dc10";
+  var questions = [
+    {q:"You have a written AI Acceptable Use Policy that staff have acknowledged.", m:"Govern"},
+    {q:"You keep an inventory of every AI tool in use across the business.", m:"Map"},
+    {q:"You have a signed BAA or DPA with each AI vendor that touches sensitive or regulated data.", m:"Govern · Vendor"},
+    {q:"You assess and document the risk of an AI tool before approving it.", m:"Measure"},
+    {q:"There is a defined approval process before staff adopt a new AI tool.", m:"Govern"},
+    {q:"Staff know the rule about never entering sensitive, customer, or patient data into public AI tools.", m:"Manage"},
+    {q:"You have reviewed what each AI vendor does with your data (training opt-out, retention, sub-processors).", m:"Measure"},
+    {q:"A human reviews AI output before it is used for decisions or official records.", m:"Manage"},
+    {q:"Your incident response plan covers AI-specific issues (data leakage, prompt injection, bad output).", m:"Manage"},
+    {q:"Your overall risk assessment / Security Risk Analysis has been updated since you adopted AI tools.", m:"Measure"}
+  ];
+  var answers = new Array(questions.length).fill(null);
+  var quiz = document.getElementById('quiz');
+  questions.forEach(function(item, i){
+    var row = document.createElement('div');
+    row.className = 'q';
+    row.innerHTML = '<div class="qt"><b>'+(i+1)+'.</b> '+item.q+'<span class="qmap">NIST AI RMF: '+item.m+'</span></div>'+
+      '<div class="toggle" role="group" aria-label="Question '+(i+1)+'">'+
+      '<button type="button" data-i="'+i+'" data-v="1" aria-pressed="false">Yes</button>'+
+      '<button type="button" data-i="'+i+'" data-v="0" aria-pressed="false">No</button></div>';
+    quiz.appendChild(row);
+  });
+  var prog = document.getElementById('prog'), seeBtn = document.getElementById('seeBtn');
+  quiz.addEventListener('click', function(e){
+    var b = e.target.closest('button'); if(!b) return;
+    var i = +b.dataset.i, v = +b.dataset.v;
+    answers[i] = v;
+    var grp = b.parentNode;
+    grp.querySelectorAll('button').forEach(function(x){ x.setAttribute('aria-pressed', x===b ? 'true':'false'); });
+    b.closest('.q').classList.add('answered');
+    var done = answers.filter(function(a){return a!==null;}).length;
+    prog.textContent = done + ' of ' + questions.length + ' answered';
+    seeBtn.disabled = done < questions.length;
+  });
+
+  var tiers = [
+    {min:0,max:3,cls:'exposed',name:'Exposed',desc:"AI is in use with little governance around it. This is where most data-leak and compliance incidents start — and the easiest gap for an auditor, insurer, or customer to find.",
+     recs:["Put a written AI Acceptable Use Policy in place first — the single highest-impact fix.","Book a free <a href=\"/#book\" style=\"color:#fff;text-decoration:underline\">Risk Snapshot call</a> to triage the biggest exposures.","If you handle patient data, the <a href=\"/ai-scribe-hipaa-audit\" style=\"color:#fff;text-decoration:underline\">AI Scribe HIPAA Audit</a> closes the BAA + risk-analysis gap.","The <a href=\"/ai\" style=\"color:#fff;text-decoration:underline\">AI Governance Pack</a> gives you the policy, risk register, and vendor questionnaire in one."]},
+    {min:4,max:6,cls:'partial',name:'Partial',desc:"You have a foundation, but real gaps remain — usually around vendor agreements, documented risk assessments, or AI-specific incident handling.",
+     recs:["Close your specific gaps with the <a href=\"/ai\" style=\"color:#fff;text-decoration:underline\">AI Governance Pack</a> (policy, risk register, vendor due-diligence).","Confirm a signed BAA/DPA with every AI vendor that touches regulated data.","Consider a <a href=\"/#book\" style=\"color:#fff;text-decoration:underline\">Risk Snapshot call</a> to pressure-test what you have."]},
+    {min:7,max:10,cls:'managed',name:'Managed',desc:"You're ahead of most businesses on AI governance. The work now is keeping it current as tools, vendors, and regulations change.",
+     recs:["Keep your AI tool inventory and risk register current as new tools are adopted.","Re-review vendor data practices at each renewal.","An ongoing <a href=\"/#book\" style=\"color:#fff;text-decoration:underline\">advisory retainer</a> keeps documentation examiner-ready without the upkeep falling on you."]}
+  ];
+  var result = document.getElementById('result');
+  seeBtn.addEventListener('click', function(){
+    var score = answers.reduce(function(s,a){return s + (a||0);}, 0);
+    var t = tiers.find(function(x){return score>=x.min && score<=x.max;});
+    document.getElementById('scoreNum').textContent = score;
+    var card = document.getElementById('rcard');
+    card.className = 'result-card ' + t.cls;
+    document.getElementById('tierName').textContent = t.name;
+    document.getElementById('tierDesc').textContent = t.desc;
+    var rl = document.getElementById('recList'); rl.innerHTML = '';
+    t.recs.forEach(function(r){ var li=document.createElement('li'); li.innerHTML=r; rl.appendChild(li); });
+    result.classList.add('show');
+    document.getElementById('email').dataset.score = score + '/10 (' + t.name + ')';
+    result.scrollIntoView({behavior:'smooth'});
+  });
+
+  document.getElementById('nl').addEventListener('submit', function(e){
+    e.preventDefault();
+    var email = document.getElementById('email').value;
+    var score = document.getElementById('email').dataset.score || '';
+    var msg = document.getElementById('nlMsg');
+    fetch('https://api.web3forms.com/submit', {
+      method:'POST', headers:{'Content-Type':'application/json', 'Accept':'application/json'},
+      body: JSON.stringify({access_key:WEB3FORMS_KEY, subject:'AI Governance Scorecard — new result', from_name:'AI Readiness Scorecard', email:email, score:score})
+    }).then(function(r){return r.json();}).then(function(d){
+      msg.style.display='block';
+      if(d.success){ e.target.style.display='none'; msg.style.color='var(--gold)'; msg.textContent="✓ Sent — check your inbox for the AI Governance Action Checklist."; }
+      else { msg.style.color='#ffb3a8'; msg.textContent="Something went wrong — email sanchez@ironsentinelhq.com and we'll send it."; }
+    }).catch(function(){ msg.style.display='block'; msg.style.color='#ffb3a8'; msg.textContent="Couldn't connect — email sanchez@ironsentinelhq.com and we'll send it."; });
+  });
+})();
+</script>
+</body>
+</html>
