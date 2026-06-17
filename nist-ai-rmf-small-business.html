@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<link rel="icon" type="image/png" href="/logo.png">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NIST AI RMF for Small Businesses: What It Is & Why Your Auditor Will Ask | Iron Sentinel</title>
+<meta name="description" content="A plain-English guide to the NIST AI Risk Management Framework for small businesses: what its four functions (Govern, Map, Measure, Manage) actually mean, why customers and auditors are starting to ask about it, and how to start. Free scorecard, no jargon.">
+<link rel="canonical" href="https://ironsentinelhq.com/nist-ai-rmf-small-business">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Iron Sentinel">
+<meta property="og:title" content="NIST AI RMF for Small Businesses (Plain English)">
+<meta property="og:description" content="The four functions of the NIST AI Risk Management Framework, what they mean for a small business, and how to start.">
+<meta property="og:url" content="https://ironsentinelhq.com/nist-ai-rmf-small-business">
+<meta property="og:image" content="https://ironsentinelhq.com/logo.png">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="NIST AI RMF for Small Businesses (Plain English)">
+<meta name="twitter:description" content="The four functions of the NIST AI RMF and how to start.">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=DM+Serif+Display&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--navy:#1B2A4A;--blue:#2E5090;--gold:#C59A2E;--gold-text:#7B5800;--light:#F8F9FA;--white:#FFFFFF;--text:#333;--gray:#555;--green:#1E8449}
+body{font-family:'DM Sans',sans-serif;color:var(--text);line-height:1.6;background:var(--white)}
+.container{max-width:840px;margin:0 auto;padding:0 24px}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+a{color:var(--blue)}
+*:focus-visible{outline:3px solid var(--gold);outline-offset:3px;border-radius:3px}
+.nav{display:flex;justify-content:space-between;align-items:center;padding:20px 0}
+.logo{color:var(--white);font-family:'DM Serif Display',serif;font-size:22px;text-decoration:none;display:flex;align-items:center;gap:8px}
+.nav-link{color:var(--gold);text-decoration:none;font-weight:500;font-size:14px;padding:8px 18px;border:1px solid var(--gold);border-radius:6px}
+.nav-link:hover{background:var(--gold);color:var(--navy)}
+.hero{background:var(--navy);padding:56px 0 80px;position:relative}
+.hero::after{content:'';position:absolute;bottom:-2px;left:0;right:0;height:50px;background:var(--white);clip-path:polygon(0 100%,100% 100%,100% 0)}
+.hero-badge{display:inline-block;background:rgba(197,154,46,0.15);color:var(--gold);padding:6px 16px;border-radius:20px;font-size:13px;font-weight:500;margin-bottom:18px;border:1px solid rgba(197,154,46,0.3)}
+.hero h1{font-family:'DM Serif Display',serif;color:var(--white);font-size:clamp(28px,4.2vw,42px);line-height:1.15;margin-bottom:14px}
+.hero h1 span{color:var(--gold)}
+.hero p{color:rgba(255,255,255,0.85);font-size:17px;max-width:640px}
+.body-wrap{padding:8px 0 40px}
+.intro{background:var(--light);border-left:4px solid var(--gold);border-radius:10px;padding:18px 22px;margin:0 0 34px;font-size:14.5px;color:var(--gray)}
+.group{margin:0 0 30px}
+.group h2{font-family:'DM Serif Display',serif;color:var(--navy);font-size:24px;margin:0 0 10px}
+.group h3{color:var(--navy);font-size:17px;margin:18px 0 6px}
+.group p{margin:0 0 12px;font-size:15.5px}
+.group ul{margin:0 0 14px 20px;font-size:15.5px}
+.group li{margin-bottom:6px}
+.fn{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:8px 0 20px}
+.fn .card{border:1px solid #E4E7EC;border-radius:12px;padding:18px;border-top:3px solid var(--gold)}
+.fn .card h3{color:var(--navy);font-size:16px;margin:0 0 4px}
+.fn .card p{font-size:14px;color:var(--gray);margin:0}
+.tldr{background:var(--navy);color:var(--white);border-radius:14px;padding:28px;margin:24px 0}
+.tldr h2{font-family:'DM Serif Display',serif;color:var(--gold);font-size:22px;margin-bottom:12px}
+.tldr ul{list-style:none;display:flex;flex-direction:column;gap:10px}
+.tldr li{font-size:14.5px;color:rgba(255,255,255,0.9);padding-left:24px;position:relative}
+.tldr li::before{content:'▸';position:absolute;left:0;color:var(--gold)}
+.note{border:1px solid #E4E7EC;border-radius:10px;padding:18px 22px;font-size:14px;color:var(--gray);margin:0 0 30px}
+.note.win{border-left:4px solid var(--green);background:var(--light)}
+.cta-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:10px 0 8px}
+.cta{background:var(--light);border-radius:12px;padding:24px;border-top:3px solid var(--gold);text-align:center}
+.cta h3{color:var(--navy);font-size:16px;margin-bottom:6px}
+.cta p{color:var(--gray);font-size:13px;margin-bottom:14px}
+.btn{display:inline-block;background:var(--gold);color:var(--navy);padding:12px 22px;border-radius:8px;font-weight:700;font-size:14px;text-decoration:none}
+.btn.alt{background:var(--navy);color:var(--white)}
+.btn:hover{transform:translateY(-2px)}
+.xlink{font-size:14px;color:var(--gray);border-top:1px solid #E4E7EC;padding-top:16px;margin-top:8px}
+footer{background:var(--navy);padding:36px 0;margin-top:40px}
+.footer-inner{display:flex;flex-direction:column;align-items:center;gap:12px;text-align:center}
+.footer-logo{color:var(--white);font-family:'DM Serif Display',serif;font-size:20px;display:flex;align-items:center;gap:8px}
+.footer-links{display:flex;gap:22px;flex-wrap:wrap;justify-content:center}
+.footer-links a{color:rgba(255,255,255,0.65);font-size:13px;text-decoration:none}
+.footer-links a:hover{color:var(--gold)}
+.disc{color:rgba(255,255,255,0.4);font-size:11px;max-width:700px;line-height:1.7;border-top:1px solid rgba(255,255,255,0.08);padding-top:14px;margin-top:8px}
+@media(max-width:680px){.fn,.cta-grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<a href="#main" class="sr-only">Skip to main content</a>
+<header>
+<section class="hero">
+<div class="container">
+  <nav class="nav" aria-label="Main navigation">
+    <a href="/" class="logo" aria-label="Iron Sentinel — Home"><img src="/logo.png" alt="" aria-hidden="true" style="height:1.25em;width:auto;vertical-align:-0.25em"> Iron Sentinel</a>
+    <a href="/ai" class="nav-link">AI Governance Pack →</a>
+  </nav>
+  <div class="hero-badge">Plain-English AI Governance Guide</div>
+  <h1>NIST AI RMF for small businesses: <span>what it is and why it's about to matter.</span></h1>
+  <p>The NIST AI Risk Management Framework sounds like something only a Fortune 500 needs. It isn't. It's a practical structure for governing the AI tools your team already uses — and customers, insurers, and auditors are starting to ask whether you follow it.</p>
+</div>
+</section>
+</header>
+
+<main id="main">
+<div class="container body-wrap">
+
+  <div class="intro"><strong>The short version:</strong> The NIST AI RMF (officially NIST AI 100-1) is a voluntary framework for managing the risks of AI. It is built around four functions — <strong>Govern, Map, Measure, Manage</strong> — and you can apply a right-sized version of it in an afternoon. It is becoming the common language for "do you have your AI under control?"</p></div>
+
+  <section class="group">
+    <h2>What it actually is</h2>
+    <p>NIST — the U.S. National Institute of Standards and Technology — publishes the security frameworks much of the business world runs on (the Cybersecurity Framework, SP 800-53, and others). In 2023 it released the <strong>AI Risk Management Framework</strong> to do for AI what those did for security: give organizations a structured, voluntary way to identify and reduce risk.</p>
+    <p>It is <em>not</em> a law, a certification, or a checklist you "pass." It is a way of thinking about AI risk that you can document — which is exactly what makes it useful when someone asks how you govern AI.</p>
+  </section>
+
+  <section class="group">
+    <h2>The four functions, in plain English</h2>
+    <div class="fn">
+      <div class="card"><h3>Govern</h3><p>Set the rules: who owns AI decisions, what's allowed, and the policies staff follow. The foundation everything else sits on.</p></div>
+      <div class="card"><h3>Map</h3><p>Know what you have: an inventory of every AI tool in use and the context it operates in. You can't manage what you haven't listed.</p></div>
+      <div class="card"><h3>Measure</h3><p>Assess the risk: evaluate each tool's data exposure, vendor practices, and potential for harm before and after you adopt it.</p></div>
+      <div class="card"><h3>Manage</h3><p>Act on it: prioritize the risks, put controls and human review in place, and have a plan for when something goes wrong.</p></div>
+    </div>
+    <p>That's the whole model. For a small business, "implementing the NIST AI RMF" can be as simple as: a written AI use policy (Govern), a list of your AI tools (Map), a quick risk rating for each (Measure), and an approval + review process (Manage).</p>
+  </section>
+
+  <section class="group">
+    <h2>Why your auditor, insurer, and customers will ask</h2>
+    <p>Three forces are converging:</p>
+    <ul>
+      <li><strong>Customers.</strong> Enterprise security questionnaires now include AI questions — "do you have an AI acceptable use policy?", "how do you vet AI vendors?" If you sell to bigger companies, you'll see these.</li>
+      <li><strong>Insurers.</strong> Cyber-insurance underwriters are beginning to ask about AI governance at renewal, the same way they started asking about MFA a few years ago.</li>
+      <li><strong>Regulators &amp; auditors.</strong> Existing frameworks (HIPAA, SOC 2) increasingly expect you to account for AI tools that touch sensitive data. A SOC 2 auditor will ask how an AI vendor in your environment is managed.</li>
+    </ul>
+    <p>None of these <em>require</em> the NIST AI RMF by name — but it's the framework everyone is converging on as the answer to "show me you've thought about this."</p>
+  </section>
+
+  <div class="tldr">
+    <h2>Right-sized starting point</h2>
+    <ul>
+      <li><strong>Govern:</strong> write a one-page AI Acceptable Use Policy and have staff acknowledge it.</li>
+      <li><strong>Map:</strong> list every AI tool in use (ChatGPT, Copilot, an AI scribe, anything embedded in your SaaS).</li>
+      <li><strong>Measure:</strong> rate each for data sensitivity and vendor risk; confirm a DPA or BAA where needed.</li>
+      <li><strong>Manage:</strong> require approval before new tools go live, and add AI scenarios to your incident plan.</li>
+    </ul>
+  </div>
+
+  <div class="note win"><strong>Honest note:</strong> there is no official "NIST AI RMF certification." Anyone selling you one is selling something that doesn't exist. The value is in actually doing it and being able to show your work — not a badge.</div>
+
+  <section class="group">
+    <h2>Where to start — free</h2>
+    <p>See where you stand before you build anything:</p>
+    <div class="cta-grid">
+      <div class="cta">
+        <h3>AI Governance Readiness Scorecard</h3>
+        <p>10 questions mapped to the four NIST AI RMF functions. Get your score and the gaps to fix first.</p>
+        <a href="/ai-readiness-scorecard" class="btn">Take the Scorecard →</a>
+      </div>
+      <div class="cta">
+        <h3>AI Governance Pack</h3>
+        <p>The policy, risk register, and vendor due-diligence questionnaire — mapped to the framework. $147.</p>
+        <a href="/ai" class="btn alt">See the Pack →</a>
+      </div>
+    </div>
+    <p class="xlink">Related: <a href="/ai-acceptable-use-policy">What generic AI use policies get wrong</a> · <a href="/ai-scribe-hipaa-audit">Healthcare practices using AI scribes →</a> · Want a human read? <a href="/#book">Book a free Risk Snapshot call</a>.</p>
+  </section>
+
+</div>
+</main>
+
+<footer>
+<div class="container">
+  <div class="footer-inner">
+    <div class="footer-logo"><img src="/logo.png" alt="" aria-hidden="true" style="height:1.25em;width:auto;vertical-align:-0.25em"> Iron Sentinel LLC</div>
+    <nav class="footer-links" aria-label="Footer navigation">
+      <a href="/">Home</a>
+      <a href="/ai-readiness-scorecard">AI Readiness Scorecard</a>
+      <a href="/ai">AI Governance Pack</a>
+      <a href="/soc2-vs-hipaa">SOC 2 vs HIPAA</a>
+      <a href="/privacy">Privacy</a>
+      <a href="/terms">Terms</a>
+    </nav>
+    <p class="disc"><strong>Educational information only — not legal advice.</strong> NIST AI RMF references are for general guidance; Iron Sentinel is independent and not affiliated with NIST or any government agency. There is no official NIST AI RMF certification. Consult qualified professionals for your specific situation.</p>
+    <p class="disc"><strong>Independence Disclosure:</strong> Iron Sentinel LLC is an independent private cybersecurity consultancy. This business operates entirely separately from any federal employment held by its principal. Iron Sentinel does not represent, affiliate with, endorse, or perform work for any federal agency. No federal resources, time, or proprietary information are used in the operation of Iron Sentinel LLC.</p>
+  </div>
+</div>
+</footer>
+
+</body>
+</html>
