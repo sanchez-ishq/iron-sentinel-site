@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<link rel="icon" type="image/png" href="/logo.png">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Payment received — let's book your call | Iron Sentinel</title>
+<meta name="robots" content="noindex,follow">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=DM+Serif+Display&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--navy:#1B2A4A;--blue:#2E5090;--gold:#C59A2E;--light:#F8F9FA;--white:#FFFFFF;--text:#333;--gray:#555;--green:#1E8449}
+body{font-family:'DM Sans',sans-serif;color:var(--text);line-height:1.6;background:var(--white)}
+.container{max-width:680px;margin:0 auto;padding:0 24px}
+a{color:var(--blue)}
+*:focus-visible{outline:3px solid var(--gold);outline-offset:3px;border-radius:3px}
+.hero{background:var(--navy);padding:56px 0 64px;text-align:center}
+.badge{display:inline-flex;align-items:center;gap:8px;background:rgba(30,132,73,0.15);border:1px solid rgba(30,132,73,0.4);color:#4fc87a;padding:8px 18px;border-radius:100px;font-size:14px;font-weight:600;margin-bottom:22px}
+.hero h1{font-family:'DM Serif Display',serif;color:var(--white);font-size:clamp(26px,4vw,36px);margin-bottom:12px}
+.hero p{color:rgba(255,255,255,0.82);font-size:17px;max-width:520px;margin:0 auto}
+.body-wrap{padding:44px 0}
+.card{border:1px solid #E4E7EC;border-radius:14px;padding:28px;text-align:center;border-top:3px solid var(--gold);margin-bottom:24px}
+.card h2{font-family:'DM Serif Display',serif;color:var(--navy);font-size:22px;margin-bottom:8px}
+.card p{color:var(--gray);font-size:15px;margin-bottom:18px}
+.btn{display:inline-block;background:var(--gold);color:var(--navy);padding:14px 28px;border-radius:8px;font-weight:700;font-size:16px;text-decoration:none}
+.btn:hover{background:#b8881f}
+.steps{counter-reset:s;list-style:none;max-width:520px;margin:0 auto;text-align:left}
+.steps li{position:relative;padding:0 0 16px 44px;font-size:15px}
+.steps li::before{counter-increment:s;content:counter(s);position:absolute;left:0;top:-2px;width:30px;height:30px;background:var(--navy);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:14px}
+footer{background:var(--navy);padding:28px 0;text-align:center}
+footer p{color:rgba(255,255,255,0.45);font-size:12px;max-width:640px;margin:0 auto;line-height:1.7}
+footer a{color:rgba(255,255,255,0.6)}
+</style>
+</head>
+<body>
+<header class="hero">
+<div class="container">
+  <div class="badge" role="status"><span aria-hidden="true">✓</span> Payment received</div>
+  <h1>You're booked in. Let's get started.</h1>
+  <p>Thanks for purchasing the AI Scribe HIPAA Readiness Review. The next step is a quick scheduling — pick a time for your Risk Snapshot call below.</p>
+</div>
+</header>
+
+<main>
+<div class="container body-wrap">
+  <div class="card">
+    <h2>Book your Risk Snapshot call</h2>
+    <p>A 60-minute call where we map your AI tools and scope the review. Grab whatever time works.</p>
+    <a href="https://calendly.com/sanchez-ironsentinelhq/risk-snapshot" class="btn" target="_blank" rel="noopener">Pick a time →</a>
+  </div>
+
+  <h2 style="font-family:'DM Serif Display',serif;color:var(--navy);font-size:20px;text-align:center;margin-bottom:18px">What happens next</h2>
+  <ol class="steps">
+    <li><strong>Book the call</strong> above (or I'll email you within one business day to schedule).</li>
+    <li><strong>Short intake</strong> — I'll send a few questions about your AI tools, vendors, and current policies before the call.</li>
+    <li><strong>The call &amp; the work</strong> — we talk for ~60 minutes, then I produce your written Security Risk Analysis, BAA gap list, AI use policy, and remediation sheet.</li>
+    <li><strong>Delivery</strong> — your documents land in about two weeks, with a short walkthrough.</li>
+  </ol>
+
+  <p style="text-align:center;color:var(--gray);font-size:14px;margin-top:28px">Questions? Email <a href="mailto:sanchez@ironsentinelhq.com">sanchez@ironsentinelhq.com</a>.</p>
+</div>
+</main>
+
+<footer>
+<div class="container">
+  <p><strong style="color:rgba(255,255,255,0.7)">Educational and advisory services only — not legal advice.</strong> Iron Sentinel LLC is an independent private cybersecurity consultancy; it is not a law firm or a CPA firm, and is not affiliated with any federal agency. HIPAA compliance is an ongoing obligation; this engagement is a readiness review, not a government certification.</p>
+</div>
+</footer>
+
+<script>
+// Notify the owner that a purchase landed so the engagement can be kicked off.
+(function(){
+  try{
+    fetch("https://api.web3forms.com/submit",{
+      method:"POST", headers:{"Content-Type":"application/json","Accept":"application/json"},
+      body: JSON.stringify({
+        access_key:"f4b35657-1ddb-4910-a049-f74a2b18dc10",
+        subject:"NEW SALE — AI Scribe HIPAA Readiness Review ($497)",
+        from_name:"Iron Sentinel site",
+        message:"A visitor reached the AI Scribe Readiness Review success page (payment confirmed by Stripe). Follow up to schedule the Risk Snapshot call if they haven't self-booked."
+      })
+    });
+  }catch(e){}
+})();
+</script>
+</body>
+</html>
