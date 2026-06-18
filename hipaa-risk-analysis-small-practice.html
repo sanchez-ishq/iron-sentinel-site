@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<link rel="icon" type="image/png" href="/logo.png">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HIPAA Risk Analysis for Small Practices: The Step Most Skip | Iron Sentinel</title>
+<meta name="description" content="The HIPAA Security Rule requires a Security Risk Analysis — and it's the #1 finding in HHS settlements with small practices. What it is, why your EHR vendor doesn't do it for you, and how your new AI scribe changes it. Plain English.">
+<link rel="canonical" href="https://ironsentinelhq.com/hipaa-risk-analysis-small-practice">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Iron Sentinel">
+<meta property="og:title" content="HIPAA Risk Analysis for Small Practices">
+<meta property="og:description" content="The Security Risk Analysis is required, most practices skip it, and your AI scribe just changed it. Here's what to do.">
+<meta property="og:url" content="https://ironsentinelhq.com/hipaa-risk-analysis-small-practice">
+<meta property="og:image" content="https://ironsentinelhq.com/logo.png">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="HIPAA Risk Analysis for Small Practices">
+<meta name="twitter:description" content="The required step most practices skip — and how AI scribes change it.">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=DM+Serif+Display&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--navy:#1B2A4A;--blue:#2E5090;--gold:#C59A2E;--gold-text:#7B5800;--light:#F8F9FA;--white:#FFFFFF;--text:#333;--gray:#555;--green:#1E8449;--red:#B23A2E}
+body{font-family:'DM Sans',sans-serif;color:var(--text);line-height:1.6;background:var(--white)}
+.container{max-width:840px;margin:0 auto;padding:0 24px}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+a{color:var(--blue)}
+*:focus-visible{outline:3px solid var(--gold);outline-offset:3px;border-radius:3px}
+.nav{display:flex;justify-content:space-between;align-items:center;padding:20px 0}
+.logo{color:var(--white);font-family:'DM Serif Display',serif;font-size:22px;text-decoration:none;display:flex;align-items:center;gap:8px}
+.nav-link{color:var(--gold);text-decoration:none;font-weight:500;font-size:14px;padding:8px 18px;border:1px solid var(--gold);border-radius:6px}
+.nav-link:hover{background:var(--gold);color:var(--navy)}
+.hero{background:var(--navy);padding:56px 0 80px;position:relative}
+.hero::after{content:'';position:absolute;bottom:-2px;left:0;right:0;height:50px;background:var(--white);clip-path:polygon(0 100%,100% 100%,100% 0)}
+.hero-badge{display:inline-block;background:rgba(197,154,46,0.15);color:var(--gold);padding:6px 16px;border-radius:20px;font-size:13px;font-weight:500;margin-bottom:18px;border:1px solid rgba(197,154,46,0.3)}
+.hero h1{font-family:'DM Serif Display',serif;color:var(--white);font-size:clamp(28px,4.2vw,42px);line-height:1.15;margin-bottom:14px}
+.hero h1 span{color:var(--gold)}
+.hero p{color:rgba(255,255,255,0.85);font-size:17px;max-width:640px}
+.body-wrap{padding:8px 0 40px}
+.intro{background:var(--light);border-left:4px solid var(--gold);border-radius:10px;padding:18px 22px;margin:0 0 34px;font-size:14.5px;color:var(--gray)}
+.group{margin:0 0 30px}
+.group h2{font-family:'DM Serif Display',serif;color:var(--navy);font-size:24px;margin:0 0 10px}
+.group p{margin:0 0 12px;font-size:15.5px}
+.group ul{margin:0 0 14px 20px;font-size:15.5px}
+.group li{margin-bottom:6px}
+.tldr{background:var(--navy);color:var(--white);border-radius:14px;padding:28px;margin:24px 0}
+.tldr h2{font-family:'DM Serif Display',serif;color:var(--gold);font-size:22px;margin-bottom:12px}
+.tldr ul{list-style:none;display:flex;flex-direction:column;gap:10px}
+.tldr li{font-size:14.5px;color:rgba(255,255,255,0.9);padding-left:24px;position:relative}
+.tldr li::before{content:'▸';position:absolute;left:0;color:var(--gold)}
+.note{border:1px solid #E4E7EC;border-radius:10px;padding:18px 22px;font-size:14px;color:var(--gray);margin:0 0 30px}
+.note.warn{border-left:4px solid var(--red);background:var(--light)}
+.note.win{border-left:4px solid var(--green);background:var(--light)}
+.cta-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:10px 0 8px}
+.cta{background:var(--light);border-radius:12px;padding:24px;border-top:3px solid var(--gold);text-align:center}
+.cta h3{color:var(--navy);font-size:16px;margin-bottom:6px}
+.cta p{color:var(--gray);font-size:13px;margin-bottom:14px}
+.btn{display:inline-block;background:var(--gold);color:var(--navy);padding:12px 22px;border-radius:8px;font-weight:700;font-size:14px;text-decoration:none}
+.btn.alt{background:var(--navy);color:var(--white)}
+.btn:hover{transform:translateY(-2px)}
+.xlink{font-size:14px;color:var(--gray);border-top:1px solid #E4E7EC;padding-top:16px;margin-top:8px}
+footer{background:var(--navy);padding:36px 0;margin-top:40px}
+.footer-inner{display:flex;flex-direction:column;align-items:center;gap:12px;text-align:center}
+.footer-logo{color:var(--white);font-family:'DM Serif Display',serif;font-size:20px;display:flex;align-items:center;gap:8px}
+.footer-links{display:flex;gap:22px;flex-wrap:wrap;justify-content:center}
+.footer-links a{color:rgba(255,255,255,0.65);font-size:13px;text-decoration:none}
+.footer-links a:hover{color:var(--gold)}
+.disc{color:rgba(255,255,255,0.4);font-size:11px;max-width:700px;line-height:1.7;border-top:1px solid rgba(255,255,255,0.08);padding-top:14px;margin-top:8px}
+@media(max-width:680px){.cta-grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<a href="#main" class="sr-only">Skip to main content</a>
+<header>
+<section class="hero">
+<div class="container">
+  <nav class="nav" aria-label="Main navigation">
+    <a href="/" class="logo" aria-label="Iron Sentinel — Home"><img src="/logo.png" alt="" aria-hidden="true" style="height:1.25em;width:auto;vertical-align:-0.25em"> Iron Sentinel</a>
+    <a href="/ai-scribe-hipaa-audit" class="nav-link">AI Scribe Review →</a>
+  </nav>
+  <div class="hero-badge">For Small &amp; Mid-Size Practices</div>
+  <h1>HIPAA Risk Analysis: <span>the required step most practices skip.</span></h1>
+  <p>The Security Risk Analysis is the foundation of HIPAA Security Rule compliance — and the single most common finding in HHS settlements with small practices. Here's what it actually is, why your EHR vendor isn't doing it for you, and how a new AI scribe changes it.</p>
+</div>
+</section>
+</header>
+
+<main id="main">
+<div class="container body-wrap">
+
+  <div class="intro"><strong>The short version:</strong> If your practice creates, receives, or stores electronic protected health information (ePHI), the HIPAA Security Rule requires a documented <strong>Security Risk Analysis (SRA)</strong> — and you must keep it current. It is not a one-time form, not something your EHR vendor does for you, and not optional. When OCR investigates a small practice, "no current risk analysis" is the finding they cite first.</p></div>
+
+  <section class="group">
+    <h2>What a Security Risk Analysis actually is</h2>
+    <p>An SRA is a documented, organization-wide assessment of the risks to the confidentiality, integrity, and availability of the ePHI you hold. In plain terms: <em>where does patient information live, what could go wrong, how likely is it, and what are you doing about it?</em></p>
+    <p>It covers all of it — your EHR, email, devices, where data is stored and backed up, who has access, and every vendor that touches PHI. It's required by the Security Rule's administrative safeguards, and it has to be reviewed and updated when things change.</p>
+  </section>
+
+  <section class="group">
+    <h2>Three myths that get practices in trouble</h2>
+    <ul>
+      <li><strong>"Our EHR vendor handles HIPAA."</strong> Your EHR vendor secures data inside <em>their</em> system, under their BAA with you. The SRA is an assessment of <em>your whole practice</em> — they don't do it for you, and your other tools aren't in their scope.</li>
+      <li><strong>"We did one when we opened."</strong> An SRA from three years ago that predates your current tools is out of date. It must be updated when you add systems, vendors, or — critically — AI tools.</li>
+      <li><strong>"We're too small to matter."</strong> The majority of HIPAA settlements in recent years have been with small and mid-size practices, frequently for a missing or stale risk analysis and inadequate Business Associate Agreements.</li>
+    </ul>
+  </section>
+
+  <section class="group">
+    <h2>Why your AI scribe just changed your risk analysis</h2>
+    <p>Ambient AI documentation tools — DAX, Nabla, Suki, Abridge — listen to or process the patient encounter. That means they handle PHI, which makes the vendor a <strong>HIPAA Business Associate</strong>. Two things follow immediately:</p>
+    <ul>
+      <li>You need a signed <strong>Business Associate Agreement</strong> with the AI vendor (separate from your EHR's BAA).</li>
+      <li>Your Security Risk Analysis must be <strong>updated</strong> to include the new data flow, vendor, and risks the tool introduces.</li>
+    </ul>
+    <p>Most practices adopt these tools for the time savings and never circle back to the compliance side. That gap — a new PHI-handling vendor with no BAA and an SRA that doesn't mention it — is exactly what an examiner or your malpractice carrier will look for.</p>
+  </section>
+
+  <div class="tldr">
+    <h2>What a current SRA needs to cover</h2>
+    <ul>
+      <li>An inventory of where ePHI is created, received, stored, and transmitted — including AI tools.</li>
+      <li>A signed BAA with every vendor that touches PHI (EHR, billing, AI scribe, cloud, email).</li>
+      <li>Threats and vulnerabilities, with a likelihood and impact rating for each.</li>
+      <li>The safeguards in place and a remediation plan for the gaps.</li>
+      <li>A review date — and an actual review when tools or vendors change.</li>
+    </ul>
+  </div>
+
+  <div class="note win"><strong>Honest note:</strong> a risk analysis is a real piece of work, but for a small practice it's a few hours with the right structure — not a six-figure consulting project. The point is that it's <em>documented</em> and <em>current</em>, so that if anyone ever asks, you can show it.</div>
+
+  <section class="group">
+    <h2>Where to start</h2>
+    <p>If you're using an AI scribe, the fastest path to a current, defensible SRA is to scope it to your actual tools:</p>
+    <div class="cta-grid">
+      <div class="cta">
+        <h3>AI Scribe HIPAA Readiness Review — $497</h3>
+        <p>A written SRA scoped to your AI tools, a BAA gap list, and an AI use policy. Fixed scope, no retainer.</p>
+        <a href="/ai-scribe-hipaa-audit" class="btn">See the Review →</a>
+      </div>
+      <div class="cta">
+        <h3>HIPAA Compliance Pack — $147</h3>
+        <p>The full Security Rule readiness checklist plus the required policy templates, to do it yourself.</p>
+        <a href="/hipaa" class="btn alt">See the Pack →</a>
+      </div>
+    </div>
+    <p class="xlink">Related: <a href="/soc2-vs-hipaa">SOC 2 vs HIPAA — which do you need?</a> · <a href="/ai-readiness-scorecard">AI Governance Readiness Scorecard →</a> · Prefer to talk it through? <a href="/#book">Book a free Risk Snapshot call</a>.</p>
+  </section>
+
+</div>
+</main>
+
+<footer>
+<div class="container">
+  <div class="footer-inner">
+    <div class="footer-logo"><img src="/logo.png" alt="" aria-hidden="true" style="height:1.25em;width:auto;vertical-align:-0.25em"> Iron Sentinel LLC</div>
+    <nav class="footer-links" aria-label="Footer navigation">
+      <a href="/">Home</a>
+      <a href="/ai-scribe-hipaa-audit">AI Scribe HIPAA Readiness Review</a>
+      <a href="/hipaa">HIPAA Pack</a>
+      <a href="/soc2-vs-hipaa">SOC 2 vs HIPAA</a>
+      <a href="/privacy">Privacy</a>
+      <a href="/terms">Terms</a>
+    </nav>
+    <p class="disc"><strong>Educational information only — not legal advice.</strong> This article is general guidance, not a substitute for a risk analysis performed for your practice or for advice from qualified counsel. Iron Sentinel is an independent consultancy and does not provide legal representation. HIPAA compliance is an ongoing obligation; there is no official government HIPAA certification.</p>
+    <p class="disc"><strong>Independence Disclosure:</strong> Iron Sentinel LLC is an independent private cybersecurity consultancy. This business operates entirely separately from any federal employment held by its principal. Iron Sentinel does not represent, affiliate with, endorse, or perform work for any federal agency. No federal resources, time, or proprietary information are used in the operation of Iron Sentinel LLC.</p>
+  </div>
+</div>
+</footer>
+
+</body>
+</html>
